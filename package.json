@@ -1,0 +1,14 @@
+{
+  "name": "smartphone-launch-radar",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "python3 -m http.server 4173",
+    "build": "node scripts/build.mjs",
+    "preview": "python3 -m http.server 4173 -d dist",
+    "validate:data": "node scripts/validate-events.mjs",
+    "update:monthly": "node scripts/monthly-update.mjs",
+    "test": "npm run validate:data && npm run build"
+  }
+}
