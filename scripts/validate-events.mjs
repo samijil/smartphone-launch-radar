@@ -33,6 +33,7 @@ for (const [i, e] of (payload.events || []).entries()) {
   if (e.date && Number.isNaN(Date.parse(e.date))) errors.push(`${where}.date doit être une date ISO valide`);
   if (e.status === 'TBC' && e.confidence === 'OFFICIAL' && e.date) errors.push(`${where}: une date officielle doit être UPCOMING, LIVE ou COMPLETED`);
   if (e.confidence === 'OFFICIAL' && !e.officialUrl) errors.push(`${where}.officialUrl est requis pour une entrée OFFICIAL`);
+  if (e.confidence === 'OFFICIAL' && !e.image) errors.push(`${where}.image officielle est requise pour une entrée publiée OFFICIAL`);
 
   for (const key of urlFields) {
     if (e[key] == null || e[key] === '') continue;
@@ -49,7 +50,7 @@ for (const [i, e] of (payload.events || []).entries()) {
     officialUrls.add(e.officialUrl);
   }
 
-  if (e.image && !/^https?:\/\//.test(e.image)) errors.push(`${where}.image doit être une URL http(s) lorsqu'elle est fournie`);
+  if (!e.image || !/^https?:\/\//.test(e.image)) errors.push(`${where}.image doit être une URL http(s) officielle`);
 }
 
 if (errors.length) {
