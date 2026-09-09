@@ -80,6 +80,78 @@
         "news.motorola.com"
       ],
       "language": "en"
+    },
+    {
+      "id": "vivo-global",
+      "brand": "vivo",
+      "url": "https://www.vivo.com/en/news/",
+      "allowedHosts": [
+        "vivo.com",
+        "www.vivo.com"
+      ],
+      "language": "en"
+    },
+    {
+      "id": "oneplus-global",
+      "brand": "OnePlus",
+      "url": "https://www.oneplus.com/global/press/",
+      "allowedHosts": [
+        "oneplus.com",
+        "www.oneplus.com"
+      ],
+      "language": "en"
+    },
+    {
+      "id": "realme-global",
+      "brand": "realme",
+      "url": "https://www.realme.com/global/newsroom/",
+      "allowedHosts": [
+        "realme.com",
+        "www.realme.com"
+      ],
+      "language": "en"
+    },
+    {
+      "id": "sony-xperia",
+      "brand": "Sony",
+      "url": "https://www.sony.com/electronics/mobile",
+      "allowedHosts": [
+        "sony.com",
+        "www.sony.com"
+      ],
+      "language": "en"
+    },
+    {
+      "id": "asus-news",
+      "brand": "ASUS",
+      "url": "https://press.asus.com/",
+      "allowedHosts": [
+        "asus.com",
+        "www.asus.com",
+        "press.asus.com"
+      ],
+      "language": "en"
+    },
+    {
+      "id": "nothing-news",
+      "brand": "Nothing",
+      "url": "https://nothing.community/",
+      "allowedHosts": [
+        "nothing.community",
+        "nothing.tech",
+        "www.nothing.tech"
+      ],
+      "language": "en"
+    },
+    {
+      "id": "nubia-global",
+      "brand": "nubia",
+      "url": "https://www.nubia.com/en/",
+      "allowedHosts": [
+        "nubia.com",
+        "www.nubia.com"
+      ],
+      "language": "en"
     }
   ]
 }
