@@ -12,4 +12,4 @@
     "test": "node --check src/main.js && node --check scripts/collect-official-sources.mjs && node --check scripts/monthly-update.mjs && node --check scripts/validate-events.mjs && node --check scripts/build.mjs && npm run validate:data && npm run build && node scripts/test-build.mjs",
     "collect:official": "node scripts/collect-official-sources.mjs"
   }
-}\n
+}
