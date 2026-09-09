@@ -166,7 +166,7 @@ for (const item of previous.events ?? []) {
 const collectedByUrl = new Map();
 const errors = [];
 
-for (const source of sources) {
+await Promise.all(sources.map(async (source) => {
   try {
     const index = await fetchText(source.url);
     const links = extractLinks(index.text, index.finalUrl, source.allowedHosts);
@@ -206,7 +206,7 @@ for (const source of sources) {
   } catch (error) {
     errors.push({ source: source.id, url: source.url, error: String(error.message || error) });
   }
-}
+}));
 
 const byId = new Map();
 for (const item of collectedByUrl.values()) {
