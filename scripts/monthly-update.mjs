@@ -9,8 +9,11 @@ const now = new Date(); const month = now.toISOString().slice(0, 7);
 const data = JSON.parse(await readFile('data/events.json', 'utf8'));
 let candidates = [];
 try { candidates = JSON.parse(await readFile('data/research-candidates.json', 'utf8')).events ?? []; } catch { /* aucune collecte vérifiée disponible */ }
+let officialSeeds = [];
+try { officialSeeds = JSON.parse(await readFile('data/official-seed-events.json', 'utf8')).events ?? []; } catch { /* aucune amorce officielle disponible */ }
+candidates = [...officialSeeds, ...candidates];
 const old = new Map(data.events.map(e => [e.id, e]));
-const valid = candidates.filter(e => e.confidence === 'OFFICIAL' && e.officialUrl && !Number.isNaN(Date.parse(e.date)) && e.date.startsWith(month));
+const valid = [...new Map(candidates.map(item => [item.id, item])).values()].filter(e => e.confidence === 'OFFICIAL' && e.officialUrl && !Number.isNaN(Date.parse(e.date)) && e.date.startsWith(month));
 for (const item of valid) { const prior = old.get(item.id); old.set(item.id, prior?.confidence === 'OFFICIAL' ? { ...item, ...prior } : item); }
 data.month = month; data.updatedAt = now.toISOString(); data.events = [...old.values()].filter(e => e.date.startsWith(month));
 data.sourcesNote = `Mise à jour automatisée du ${now.toISOString()}: seules les annonces disposant d'une URL officielle et d'une date ISO sont publiées automatiquement. Les résultats rapportés et non confirmés nécessitent une revue.`;
