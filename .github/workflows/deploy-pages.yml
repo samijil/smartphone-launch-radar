@@ -25,7 +25,8 @@ jobs:
     steps:
       - uses: actions/checkout@v6
         with:
-          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
+          # For workflow_run, main already contains the collector's committed data refresh.
+          ref: main
       - uses: actions/setup-node@v6
         with:
           node-version: 22
