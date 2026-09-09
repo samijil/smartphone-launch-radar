@@ -15,11 +15,14 @@
         "models": [
           "POCO F9 Pro",
           "POCO F9 Ultra"
-        ]
+        ],
+        "prices": "POCO F9 Pro 12/256 Go : 739,90 € ; POCO F9 Ultra 12/256 Go : 829,90 € (boutique officielle, à la date de mise à jour)"
       },
       "officialUrl": "https://www.mi.com/global/launch/poco-f9-series-launch/",
       "sourceUrl": "https://www.mi.com/fr/support/terms/poco-f9-series/",
-      "requiresReview": false
+      "requiresReview": false,
+      "productUrl": "https://buy.mi.com/fr/products",
+      "reservationUrl": "https://www.mi.com/fr/product/poco-f9-ultra/buy/"
     },
     {
       "id": "samsung-galaxy-s26-fe-2026-09-04",
@@ -32,11 +35,13 @@
       "confidence": "OFFICIAL",
       "summary": "Samsung annonce la disponibilité du Galaxy S26 FE à partir du 4 septembre 2026.",
       "specifications": {
-        "model": "Galaxy S26 FE"
+        "model": "Galaxy S26 FE",
+        "prices": "128 Go : 799 € ; 256 Go : 899 € (Samsung France, à la date de mise à jour)"
       },
       "officialUrl": "https://news.samsung.com/fr/galaxy-s26-fe",
       "sourceUrl": "https://news.samsung.com/fr/galaxy-s26-fe",
-      "requiresReview": false
+      "requiresReview": false,
+      "productUrl": "https://www.samsung.com/fr/smartphones/galaxy-s26/buy/"
     },
     {
       "id": "huawei-mate-xt-2-2026-09-07",
@@ -53,7 +58,8 @@
       },
       "officialUrl": "https://consumer.huawei.com/cn/press/events/2026/harmonyos-7-and-huawei-mate-xt-2-and-all-scenario-new-product-launch-event/",
       "sourceUrl": "https://consumer.huawei.com/cn/support/content/zh-cn16112373/",
-      "requiresReview": false
+      "requiresReview": false,
+      "productUrl": "https://consumer.huawei.com/cn/phones/mate-xt-2-ultimate-design/"
     },
     {
       "id": "apple-special-event-2026-09-09",
@@ -84,11 +90,13 @@
       "specifications": {
         "models": [
           "HONOR Magic9 Series"
-        ]
+        ],
+        "availability": "Prévente/avantages officiels ouverts ; prix des modèles à publier après la conférence"
       },
       "officialUrl": "https://club.honor.com/cn/thread-30392255-1-1.html",
       "sourceUrl": "https://www.honor.com/cn/shop/notice-18130",
-      "requiresReview": false
+      "requiresReview": false,
+      "reservationUrl": "https://www.honor.com/cn/m/product/10086202924845.html"
     }
   ]
 }
