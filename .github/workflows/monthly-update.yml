@@ -1,17 +1,38 @@
 name: Official source collection and launch-data update
+
 on:
   schedule:
     - cron: '15 5 * * *'
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/monthly-update.yml'
+      - 'scripts/collect-official-sources.mjs'
+      - 'scripts/monthly-update.mjs'
+      - 'scripts/validate-events.mjs'
+      - 'data/official-sources.json'
+
 permissions:
   contents: write
+
+concurrency:
+  group: official-source-update
+  cancel-in-progress: false
+
 jobs:
   update:
     runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with: { node-version: 22, cache: npm }
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: npm
       - run: npm ci
       - name: Collect official source candidates and cautiously promote verified entries
         run: npm run update:monthly
@@ -20,12 +41,36 @@ jobs:
       - name: Build dashboard
         run: npm run build
       - name: Commit refreshed data and report
+        shell: bash
         run: |
+          set -euo pipefail
           git config user.name "smartphone-launch-radar[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
           git add data/events.json data/research-candidates.json reports/
-          git diff --cached --quiet || git commit -m "chore(data): refresh official launch candidates"
-          git push
+          if git diff --cached --quiet; then
+            echo "No generated data changes to commit."
+            exit 0
+          fi
+
+          git fetch origin main
+          git rebase origin/main
+
+          git commit -m "chore(data): refresh official launch candidates"
+
+          for attempt in 1 2 3; do
+            if git push origin HEAD:main; then
+              echo "Generated data pushed successfully."
+              exit 0
+            fi
+
+            echo "Push attempt $attempt failed; rebasing on latest main and retrying."
+            git fetch origin main
+            git rebase origin/main
+          done
+
+          echo "Unable to push generated data after 3 attempts."
+          exit 1
       - name: Notify by email webhook (optional)
         env:
           NOTIFICATION_WEBHOOK_URL: ${{ secrets.NOTIFICATION_WEBHOOK_URL }}
