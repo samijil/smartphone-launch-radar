@@ -15,3 +15,7 @@
 .image-missing .device-art{display:flex!important}
 @media(max-width:700px){.month-counters{grid-template-columns:1fr 1fr}.month-counters>div:last-child{grid-column:1/-1}.month-counters b{font-size:30px}.refresh-now{font-size:9px;padding:8px 10px}.controls{gap:7px}}
 @media(max-width:430px){.month-counters{gap:8px;margin-top:20px}.month-counters>div{padding:14px}.month-counters b{font-size:27px}.month-counters span{font-size:8px}.intro{padding-top:32px}}
+
+
+/* Advanced event filters */
+.advanced-controls{flex-wrap:wrap;align-items:end;justify-content:flex-end}.search-filter input{min-width:190px}.clear-filters{height:38px;padding:0 12px;border:1px solid rgba(255,255,255,.16);border-radius:10px;background:rgba(255,255,255,.04);color:#b8c8d6;font:700 10px 'DM Mono',monospace;text-transform:uppercase;letter-spacing:.06em;cursor:pointer}.clear-filters:hover{border-color:rgba(119,231,255,.45);color:#dffcff}@media(max-width:1100px){.advanced-controls{justify-content:flex-start}.search-filter{min-width:100%}.search-filter input{width:100%}}@media(max-width:700px){.advanced-controls label{flex:1 1 calc(50% - 8px)}.advanced-controls .search-filter{flex-basis:100%}.advanced-controls select,.advanced-controls input{width:100%}.clear-filters{flex:1 1 100%}}
