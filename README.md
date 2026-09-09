@@ -2,6 +2,12 @@
 
 Un dashboard mensuel, sombre et responsive pour surveiller les lancements de smartphones sans transformer une rumeur en annonce officielle. Le site statique est conçu pour GitHub Pages.
 
+## 🚀 Ouvrir l'application
+
+**Dashboard en ligne : https://samijil.github.io/smartphone-launch-radar/**
+
+Le dashboard est accessible directement depuis ce lien, sans installation.
+
 ## Démarrage
 
 ```bash
