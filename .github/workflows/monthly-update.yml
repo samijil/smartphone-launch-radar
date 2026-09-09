@@ -62,7 +62,7 @@ jobs:
 
             echo "Push attempt $attempt failed; rebasing on latest main and retrying."
             git fetch origin main
-            git rebase origin/main
+            GIT_EDITOR=true git rebase -X theirs origin/main
           done
 
           echo "Unable to push generated data after 3 attempts."
