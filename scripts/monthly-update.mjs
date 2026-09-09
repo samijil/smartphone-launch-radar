@@ -151,12 +151,18 @@ for (const item of valid) {
 
 data.month = currentMonth;
 data.updatedAt = now.toISOString();
-data.events = await Promise.all(
-  [...published.values()]
-    .filter(e => e.date.startsWith(currentMonth))
-    .sort((a, b) => new Date(a.date) - new Date(b.date))
-    .map(enrichOfficialMedia)
-);
+const uniqueByOfficialUrl = new Map();
+for (const event of [...published.values()].filter(e => e.date.startsWith(currentMonth)).sort((a,b)=>new Date(a.date)-new Date(b.date))) {
+  const key = String(event.officialUrl || '').replace(/\/$/, '');
+  const prior = uniqueByOfficialUrl.get(key);
+  if (!prior) uniqueByOfficialUrl.set(key, event);
+  else {
+    const priorScore = (prior.confidence === 'OFFICIAL' ? 2 : 0) + Object.keys(prior.specifications || {}).length;
+    const score = (event.confidence === 'OFFICIAL' ? 2 : 0) + Object.keys(event.specifications || {}).length;
+    if (score > priorScore) uniqueByOfficialUrl.set(key, event);
+  }
+}
+data.events = await Promise.all([...uniqueByOfficialUrl.values()].map(enrichOfficialMedia));
 
 data.sourcesNote = `Mise à jour automatisée du ${now.toISOString()}: événements du mois enrichis depuis leurs pages officielles avec photos, diffusion/replay et liens d'achat ou précommande lorsqu'ils existent.`;
 
