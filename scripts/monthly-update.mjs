@@ -98,6 +98,10 @@ async function enrichOfficialMedia(event) {
       if (product) out.productUrl = product;
     }
   }
+  if (!out.image && out.officialUrl) {
+    out.image = 'https://image.thum.io/get/width/1200/crop/675/noanimate/' + encodeURIComponent(out.officialUrl);
+    out.imageFallback = 'official-page-snapshot';
+  }
   return out;
 }
 
