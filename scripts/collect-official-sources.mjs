@@ -120,6 +120,29 @@ function explicitLaunchDate(text) {
   }
   return null;
 }
+function mediaImageOf(html, base) {
+  const patterns = [
+    /<meta[^>]+property=["']og:image["'][^>]+content=["']([^"']+)["']/i,
+    /<meta[^>]+name=["']twitter:image["'][^>]+content=["']([^"']+)["']/i,
+    /<meta[^>]+itemprop=["']image["'][^>]+content=["']([^"']+)["']/i
+  ];
+  for (const re of patterns) {
+    const hit = html.match(re);
+    if (hit) return abs(hit[1], base);
+  }
+  return null;
+}
+function mediaVideoOf(html, base) {
+  const patterns = [
+    /<meta[^>]+property=["']og:video(?::url)?["'][^>]+content=["']([^"']+)["']/i,
+    /https?:\\/\\/(?:www\\.)?(?:youtube\\.com\\/watch\\?v=[^"'\\s<]+|youtu\\.be\\/[^"'\\s<]+)/i
+  ];
+  for (const re of patterns) {
+    const hit = html.match(re);
+    if (hit) return abs(hit[1] || hit[0], base);
+  }
+  return null;
+}
 function titleOf(html, fallback) {
   return clean(
     (html.match(/<meta[^>]+property=["']og:title["'][^>]+content=["']([^"']+)["']/i) || [])[1]
@@ -182,6 +205,8 @@ await Promise.all(sources.map(async (source) => {
 
         const date = explicitLaunchDate(text);
         const prior = previousByUrl.get(officialUrl);
+        const image = mediaImageOf(page.text, officialUrl) || prior?.image || null;
+        const streamUrl = mediaVideoOf(page.text, officialUrl) || prior?.streamUrl || null;
         collectedByUrl.set(officialUrl, {
           id: prior?.id || `${source.id}-${slug(title)}`,
           name: title,
@@ -193,7 +218,8 @@ await Promise.all(sources.map(async (source) => {
           confidence: 'OFFICIAL',
           summary: text.slice(0, 600),
           specifications: prior?.specifications || {},
-          image: prior?.image || '',
+          ...(image ? { image } : {}),
+          ...(streamUrl ? { streamUrl } : {}),
           officialUrl,
           sourceUrl: source.url,
           collectedAt: new Date().toISOString(),
