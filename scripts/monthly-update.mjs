@@ -68,7 +68,7 @@ function storeLink(html, base) {
     const label = (hit[1] + ' ' + hit[3] + ' ' + hit[4]).replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ');
     if (/(buy|purchase|shop|order|pre-?order|réserver|acheter|commander|购买|预售|订金)/i.test(label)) {
       const url = absoluteUrl(hit[2], base);
-      if (url && /^https?:/.test(url)) return url;
+      if (url && /^https?:/.test(url) && !/(?:\/order\/list|\/shop\/privilege|\/products\/?$)/i.test(new URL(url).pathname)) return url;
     }
   }
   return null;
