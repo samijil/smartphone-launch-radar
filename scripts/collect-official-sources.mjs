@@ -7,7 +7,8 @@ import { readFile, writeFile } from 'node:fs/promises';
 
 const SOURCE_FILE = 'data/official-sources.json';
 const CANDIDATE_FILE = 'data/research-candidates.json';
-const MAX_ARTICLES_PER_SOURCE = 24;
+const MAX_ARTICLES_PER_SOURCE = 12;
+const FETCH_TIMEOUT_MS = 15_000;
 const PHONE_RE = /\b(phone|smartphone|iphone|galaxy\s+[szaf]|pixel\s*\d|pixel phone|fold|flip|find\s*[nxr]|reno\s*\d|xiaomi\s*\d|redmi|poco|razr|motorola edge|oneplus|honor magic|vivo\s*[xy]|nubia|nothing phone)\b/i;
 const EXCLUDE_RE = /\b(watch|buds|earbuds|tablet|pad|laptop|macbook|book|tv|monitor|washer|dryer|ssd|microwave|range|refrigerator)\b/i;
 const GENERIC_TITLE_RE = /^(iphone news|.*newsroom|.*smartphones?\s*\|.*|view all phones?)$/i;
@@ -115,19 +116,29 @@ function titleOf(html, fallback) {
   );
 }
 async function fetchText(url) {
-  const res = await fetch(url, {
-    headers: {
-      'user-agent': 'smartphone-launch-radar/1.2 (+GitHub Actions official-source collector)',
-      accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.1'
-    },
-    redirect: 'follow'
-  });
-  if (!res.ok) throw new Error(`HTTP ${res.status}`);
-  const contentType = res.headers.get('content-type') || '';
-  if (/application\/pdf|application\/octet-stream|application\/zip/i.test(contentType) || NON_HTML_PATH_RE.test(res.url)) {
-    throw new Error(`Unsupported content type: ${contentType || 'binary'}`);
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
+  try {
+    const res = await fetch(url, {
+      headers: {
+        'user-agent': 'smartphone-launch-radar/1.3 (+GitHub Actions official-source collector)',
+        accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.1'
+      },
+      redirect: 'follow',
+      signal: controller.signal
+    });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const contentType = res.headers.get('content-type') || '';
+    if (/application\/pdf|application\/octet-stream|application\/zip/i.test(contentType) || NON_HTML_PATH_RE.test(res.url)) {
+      throw new Error(`Unsupported content type: ${contentType || 'binary'}`);
+    }
+    return { text: await res.text(), finalUrl: canonicalUrl(res.url) || url };
+  } catch (error) {
+    if (error?.name === 'AbortError') throw new Error(`Request timed out after ${FETCH_TIMEOUT_MS}ms`);
+    throw error;
+  } finally {
+    clearTimeout(timer);
   }
-  return { text: await res.text(), finalUrl: canonicalUrl(res.url) || url };
 }
 
 const sources = JSON.parse(await readFile(SOURCE_FILE, 'utf8')).sources ?? [];
@@ -147,15 +158,15 @@ for (const source of sources) {
   try {
     const index = await fetchText(source.url);
     const links = extractLinks(index.text, index.finalUrl, source.allowedHosts);
-    for (const link of links) {
+    await Promise.all(links.map(async (link) => {
       try {
         const page = await fetchText(link.url);
         const title = titleOf(page.text, link.title);
         const text = clean(page.text).slice(0, 50000);
-        if (!isUsefulTitle(title) || !PHONE_RE.test(title + ' ' + text.slice(0, 5000)) || EXCLUDE_RE.test(title)) continue;
+        if (!isUsefulTitle(title) || !PHONE_RE.test(title + ' ' + text.slice(0, 5000)) || EXCLUDE_RE.test(title)) return;
 
         const officialUrl = canonicalUrl(page.finalUrl || link.url);
-        if (!officialUrl || !candidateUrl(officialUrl, source.url)) continue;
+        if (!officialUrl || !candidateUrl(officialUrl, source.url)) return;
 
         const date = explicitLaunchDate(text);
         const prior = previousByUrl.get(officialUrl);
@@ -179,7 +190,7 @@ for (const source of sources) {
       } catch (error) {
         errors.push({ source: source.id, url: link.url, error: String(error.message || error) });
       }
-    }
+    }));
   } catch (error) {
     errors.push({ source: source.id, url: source.url, error: String(error.message || error) });
   }
