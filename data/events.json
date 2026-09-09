@@ -1,8 +1,8 @@
 {
   "$schema": "https://smartphone-launch-radar.local/schema/events-v1",
   "month": "2026-09",
-  "updatedAt": "2026-09-09T10:59:37.308Z",
-  "sourcesNote": "Mise à jour automatisée du 2026-09-09T10:59:37.308Z: événements du mois enrichis depuis leurs pages officielles avec photos, diffusion/replay et liens d'achat ou précommande lorsqu'ils existent.",
+  "updatedAt": "2026-09-09T11:02:23.840Z",
+  "sourcesNote": "Mise à jour automatisée du 2026-09-09T11:02:23.840Z: événements du mois enrichis depuis leurs pages officielles avec photos, diffusion/replay et liens d'achat ou précommande lorsqu'ils existent.",
   "events": [
     {
       "id": "poco-f9-series-2026-09-01",
@@ -25,7 +25,8 @@
       "sourceUrl": "https://www.mi.com/fr/support/terms/poco-f9-series/",
       "requiresReview": false,
       "reservationUrl": "https://www.mi.com/fr/product/poco-f9-ultra/buy/",
-      "image": "https://i02.appmifile.com/136_operator_global/28/08/2026/5c797019537aefa2389b43bc0ce69d1f.jpg"
+      "image": "https://i02.appmifile.com/136_operator_global/28/08/2026/5c797019537aefa2389b43bc0ce69d1f.jpg",
+      "productUrl": "https://buy.mi.com/fr/products"
     },
     {
       "id": "samsung-galaxy-s26-fe-2026-09-04",
@@ -83,7 +84,7 @@
       "sourceUrl": "https://developer.apple.com/news/?id=s6spdug0",
       "requiresReview": false,
       "image": "https://www.apple.com/v/apple-events/home/ak/images/meta/apple_events__d0b4ek86reaa_og.png?202608260837",
-      "productUrl": "https://www.apple.com/fr/shop/goto/help"
+      "productUrl": "https://www.apple.com/fr/retail/business/"
     },
     {
       "id": "honor-magic9-series-2026-09-28",

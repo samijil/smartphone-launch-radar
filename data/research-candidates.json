@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-09T10:59:37.252Z",
+  "generatedAt": "2026-09-09T11:02:23.788Z",
   "sourceCount": 15,
   "events": [
     {
@@ -15,7 +15,7 @@
       "specifications": {},
       "officialUrl": "https://www.vivo.com/en/about-vivo/news/european-cup-opening",
       "sourceUrl": "https://www.vivo.com/en/news/",
-      "collectedAt": "2026-09-09T10:59:25.199Z",
+      "collectedAt": "2026-09-09T11:02:11.914Z",
       "requiresReview": true
     },
     {
@@ -32,7 +32,7 @@
       "image": "https://cdn.nothing.community/assets/site-image-hhrr5riu.png",
       "officialUrl": "https://nothing.community/d/62553-inexpensive-phone-3-cases",
       "sourceUrl": "https://nothing.community/",
-      "collectedAt": "2026-09-09T10:59:24.618Z",
+      "collectedAt": "2026-09-09T11:02:11.025Z",
       "requiresReview": true
     },
     {
@@ -49,24 +49,7 @@
       "image": "https://cdn.nothing.community/2026-09-09/1788946151-256209-agni-20260909-144659-0000.png",
       "officialUrl": "https://nothing.community/d/62573-nothing-phone-5a-pro-final-concept-design",
       "sourceUrl": "https://nothing.community/",
-      "collectedAt": "2026-09-09T10:59:24.503Z",
-      "requiresReview": true
-    },
-    {
-      "id": "apple-iphone-apple-presente-l-iphone-17e",
-      "name": "Apple présente l’iPhone 17e",
-      "brand": "Apple",
-      "date": null,
-      "timezone": "UTC",
-      "region": "GLOBAL",
-      "status": "TBC",
-      "confidence": "OFFICIAL",
-      "summary": "Apple présente l’iPhone 17e - Apple (FR) Apple Store Mac iPad iPhone Watch Vision AirPods TV & Maison Divertissements Accessoires Assistance 0 + Newsroom Open Newsroom navigation Close Newsroom navigation Services Apple Apple Stories Rechercher Newsroom Fermer s’ouvre dans une nouvelle fenêtre COMMUNIQUÉ DE PRESSE 2 mars 2026 Apple présente l’iPhone 17e L’iPhone 17e offre un excellent rapport qualité-prix, avec des performances plus rapides, un système caméra avancé, une résistance renforcée, la magie de MagSafe et un stockage de base deux fois plus important de 256 Go Voici l’iPhone 17e, le m",
-      "specifications": {},
-      "image": "https://www.apple.com/newsroom/images/2026/03/apple-introduces-iphone-17e/geo/Apple-iPhone-17e-hero-geo-260302-lp.jpg.og.jpg?202608191847",
-      "officialUrl": "https://www.apple.com/fr/newsroom/2026/03/apple-introduces-iphone-17e/",
-      "sourceUrl": "https://www.apple.com/fr/newsroom/topics/iphone/",
-      "collectedAt": "2026-09-09T10:59:22.904Z",
+      "collectedAt": "2026-09-09T11:02:10.881Z",
       "requiresReview": true
     },
     {
@@ -83,7 +66,7 @@
       "image": "https://consumer.huawei.com/content/dam/huawei-cbg-site/cn/mkt/pdp/harmonyos-computer/matebook-fold-ultimate-design-2026/list/gold.png",
       "officialUrl": "https://consumer.huawei.com/cn/harmonyos-computer/matebook-fold-ultimate-design/",
       "sourceUrl": "https://consumer.huawei.com/cn/press/events/",
-      "collectedAt": "2026-09-09T10:59:22.750Z",
+      "collectedAt": "2026-09-09T11:02:09.282Z",
       "requiresReview": true
     },
     {
@@ -99,7 +82,24 @@
       "specifications": {},
       "officialUrl": "https://www.honor.com/cn/phones/honor-robot-phone/",
       "sourceUrl": "https://www.honor.com/cn/news/",
-      "collectedAt": "2026-09-09T10:59:22.583Z",
+      "collectedAt": "2026-09-09T11:02:08.933Z",
+      "requiresReview": true
+    },
+    {
+      "id": "apple-iphone-apple-presente-l-iphone-17e",
+      "name": "Apple présente l’iPhone 17e",
+      "brand": "Apple",
+      "date": null,
+      "timezone": "UTC",
+      "region": "GLOBAL",
+      "status": "TBC",
+      "confidence": "OFFICIAL",
+      "summary": "Apple présente l’iPhone 17e - Apple (FR) Apple Store Mac iPad iPhone Watch Vision AirPods TV & Maison Divertissements Accessoires Assistance 0 + Newsroom Open Newsroom navigation Close Newsroom navigation Services Apple Apple Stories Rechercher Newsroom Fermer s’ouvre dans une nouvelle fenêtre COMMUNIQUÉ DE PRESSE 2 mars 2026 Apple présente l’iPhone 17e L’iPhone 17e offre un excellent rapport qualité-prix, avec des performances plus rapides, un système caméra avancé, une résistance renforcée, la magie de MagSafe et un stockage de base deux fois plus important de 256 Go Voici l’iPhone 17e, le m",
+      "specifications": {},
+      "image": "https://www.apple.com/newsroom/images/2026/03/apple-introduces-iphone-17e/geo/Apple-iPhone-17e-hero-geo-260302-lp.jpg.og.jpg?202608191847",
+      "officialUrl": "https://www.apple.com/fr/newsroom/2026/03/apple-introduces-iphone-17e/",
+      "sourceUrl": "https://www.apple.com/fr/newsroom/topics/iphone/",
+      "collectedAt": "2026-09-09T11:02:08.651Z",
       "requiresReview": true
     }
   ],
