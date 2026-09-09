@@ -1,8 +1,8 @@
 {
   "$schema": "https://smartphone-launch-radar.local/schema/events-v1",
   "month": "2026-09",
-  "updatedAt": "2026-09-09T10:36:53.752Z",
-  "sourcesNote": "Mise à jour automatisée du 2026-09-09T10:36:53.752Z: événements passés et à venir du mois 2026-09, publiés uniquement avec date ISO et URL officielle. Les candidats non confirmés restent exclus du radar.",
+  "updatedAt": "2026-09-09T10:37:42.874Z",
+  "sourcesNote": "Mise à jour automatisée du 2026-09-09T10:37:42.874Z: événements passés et à venir du mois 2026-09, publiés uniquement avec date ISO et URL officielle. Les candidats non confirmés restent exclus du radar.",
   "events": [
     {
       "id": "poco-f9-series-2026-09-01",
