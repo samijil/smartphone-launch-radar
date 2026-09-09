@@ -9,7 +9,7 @@
     "preview": "python3 -m http.server 4173 -d dist",
     "validate:data": "node scripts/validate-events.mjs",
     "update:monthly": "npm run collect:official && node scripts/monthly-update.mjs",
-    "test": "npm run validate:data && npm run build",
+    "test": "node --check src/main.js && node --check scripts/collect-official-sources.mjs && node --check scripts/monthly-update.mjs && node --check scripts/validate-events.mjs && node --check scripts/build.mjs && npm run validate:data && npm run build && node scripts/test-build.mjs",
     "collect:official": "node scripts/collect-official-sources.mjs"
   }
-}
+}\n
