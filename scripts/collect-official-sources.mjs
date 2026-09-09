@@ -68,14 +68,26 @@ function isUsefulTitle(title) {
 }
 function extractLinks(html, base, hosts) {
   const links = new Map();
-  const re = /<a\b[^>]*href=["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>/gi;
+
+  const anchorRe = /<a\b[^>]*href=["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>/gi;
   let m;
-  while ((m = re.exec(html))) {
+  while ((m = anchorRe.exec(html))) {
     const url = abs(m[1], base);
     const title = clean(m[2]);
     if (!url || !allowed(url, hosts) || !candidateUrl(url, base) || !isUsefulTitle(title)) continue;
     links.set(url, title);
   }
+
+  const itemRe = /<item\b[^>]*>([\s\S]*?)<\/item>/gi;
+  while ((m = itemRe.exec(html))) {
+    const item = m[1];
+    const title = clean((item.match(/<title[^>]*>([\s\S]*?)<\/title>/i) || [])[1] || '');
+    const href = clean((item.match(/<link[^>]*>([\s\S]*?)<\/link>/i) || item.match(/<guid[^>]*>([\s\S]*?)<\/guid>/i) || [])[1] || '');
+    const url = abs(href, base);
+    if (!url || !allowed(url, hosts) || !candidateUrl(url, base) || !isUsefulTitle(title)) continue;
+    links.set(url, title);
+  }
+
   return [...links.entries()].slice(0, MAX_ARTICLES_PER_SOURCE).map(([url, title]) => ({ url, title }));
 }
 function monthNumber(name) {
