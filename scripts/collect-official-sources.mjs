@@ -136,7 +136,8 @@ function mediaImageOf(html, base) {
     const src = (tag.match(/(?:src|data-src|data-original)=["']([^"']+)["']/i) || [])[1];
     if (src && !/^data:image/i.test(src)) return abs(src, base);
   }
-  return null;
+  const urls = html.match(/https?:[^"'\\s<>]+\\.(?:avif|webp|png|jpe?g)(?:\\?[^"'\\s<>]*)?/gi) || [];
+  return urls[0] || null;
 }
 function mediaVideoOf(html, base) {
   const patterns = [
