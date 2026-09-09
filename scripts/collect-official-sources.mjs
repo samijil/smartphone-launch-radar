@@ -130,6 +130,12 @@ function mediaImageOf(html, base) {
     const hit = html.match(re);
     if (hit) return abs(hit[1], base);
   }
+  const imgTags = [...html.matchAll(/<img\\b[^>]*>/gi)];
+  for (const match of imgTags) {
+    const tag = match[0];
+    const src = (tag.match(/(?:src|data-src|data-original)=["']([^"']+)["']/i) || [])[1];
+    if (src && !/^data:image/i.test(src)) return abs(src, base);
+  }
   return null;
 }
 function mediaVideoOf(html, base) {

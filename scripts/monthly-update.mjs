@@ -33,6 +33,24 @@ function metaValue(html, key) {
   }
   return null;
 }
+function pageImage(html, base, hint = '') {
+  const meta = metaValue(html, 'og:image') || metaValue(html, 'twitter:image') || metaValue(html, 'image');
+  if (meta) return absoluteUrl(meta, base);
+  const imgs = [...html.matchAll(/<img\\b[^>]*>/gi)];
+  const words = hint.toLowerCase().split(/[^a-z0-9]+/i).filter(x => x.length >= 3);
+  let fallback = null;
+  for (const match of imgs) {
+    const tag = match[0];
+    const src = (tag.match(/(?:src|data-src|data-original)=["']([^"']+)["']/i) || [])[1];
+    if (!src || /^data:image/i.test(src)) continue;
+    const url = absoluteUrl(src, base);
+    if (!url) continue;
+    if (!fallback) fallback = url;
+    const text = ((tag.match(/(?:alt|title)=["']([^"']*)["']/i) || [])[1] || '').toLowerCase();
+    if (words.some(w => text.includes(w))) return url;
+  }
+  return fallback;
+}
 function mediaLink(html, base) {
   const video = metaValue(html, 'og:video') || metaValue(html, 'og:video:url');
   if (video) return absoluteUrl(video, base);
@@ -64,8 +82,8 @@ async function enrichOfficialMedia(event) {
       continue;
     }
     if (!out.image) {
-      const image = metaValue(fetched.html, 'og:image') || metaValue(fetched.html, 'twitter:image') || metaValue(fetched.html, 'image');
-      if (image) out.image = absoluteUrl(image, fetched.url);
+      const image = pageImage(fetched.html, fetched.url, out.name);
+      if (image) out.image = image;
     }
     if (!out.streamUrl) {
       const stream = mediaLink(fetched.html, fetched.url);
