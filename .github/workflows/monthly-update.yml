@@ -27,8 +27,9 @@ jobs:
           git diff --cached --quiet || git commit -m "chore(data): monthly launch radar update"
           git push
       - name: Notify by email webhook (optional)
-        if: ${{ success() && secrets.NOTIFICATION_WEBHOOK_URL != '' }}
-        env: { NOTIFICATION_WEBHOOK_URL: ${{ secrets.NOTIFICATION_WEBHOOK_URL }} }
+        env:
+          NOTIFICATION_WEBHOOK_URL: ${{ secrets.NOTIFICATION_WEBHOOK_URL }}
+        if: ${{ success() && env.NOTIFICATION_WEBHOOK_URL != '' }}
         run: |
           curl --fail --silent --show-error -X POST "$NOTIFICATION_WEBHOOK_URL" \
             -H 'Content-Type: application/json' \
