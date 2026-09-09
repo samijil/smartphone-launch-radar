@@ -1,7 +1,7 @@
 {
   "$schema": "https://smartphone-launch-radar.local/schema/events-v1",
   "month": "2026-09",
-  "updatedAt": "2026-09-08T00:00:00Z",
-  "sourcesNote": "Au 8 septembre 2026, aucune annonce de lancement de smartphone pour septembre 2026 n'a pu être vérifiée auprès d'une source officielle dans le cadre de cette initialisation. Le radar ne publie pas de dates rapportées ou supposées comme confirmées.",
+  "updatedAt": "2026-09-09T09:57:32.375Z",
+  "sourcesNote": "Mise à jour automatisée du 2026-09-09T09:57:32.375Z: seules les annonces disposant d'une URL officielle et d'une date ISO sont publiées automatiquement. Les résultats rapportés et non confirmés nécessitent une revue.",
   "events": []
 }
