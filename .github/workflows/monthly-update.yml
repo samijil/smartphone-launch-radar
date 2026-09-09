@@ -12,6 +12,7 @@ on:
       - 'scripts/monthly-update.mjs'
       - 'scripts/validate-events.mjs'
       - 'data/official-sources.json'
+      - 'data/official-seed-events.json'
 
 permissions:
   contents: write
