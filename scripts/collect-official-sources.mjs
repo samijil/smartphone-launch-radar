@@ -222,7 +222,7 @@ await Promise.all(sources.map(async (source) => {
           timezone: 'UTC',
           region: 'GLOBAL',
           status: date ? 'UPCOMING' : 'TBC',
-          confidence: 'OFFICIAL',
+          confidence: source.role === 'industry' ? 'REPORTED' : 'OFFICIAL',
           summary: text.slice(0, 600),
           specifications: prior?.specifications || {},
           ...(image ? { image } : {}),
@@ -256,4 +256,4 @@ const payload = {
 };
 
 await writeFile(CANDIDATE_FILE, JSON.stringify(payload, null, 2) + '\n');
-console.log(`Official-source collection complete: ${collectedByUrl.size} unique URL candidate(s), ${payload.events.length} stored, ${errors.length} fetch error(s).`);
+console.log(`Source collection complete: ${collectedByUrl.size} unique URL candidate(s), ${payload.events.length} stored, ${errors.length} fetch error(s).`);
