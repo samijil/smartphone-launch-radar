@@ -36,10 +36,8 @@ jobs:
       - run: npm ci
       - name: Collect official source candidates and cautiously promote verified entries
         run: npm run update:monthly
-      - name: Validate launch data
-        run: npm run validate:data
-      - name: Build dashboard
-        run: npm run build
+      - name: Run full application integrity tests
+        run: npm test
       - name: Commit refreshed data and report
         shell: bash
         run: |
