@@ -24,12 +24,13 @@ async function fetchOfficialHtml(url) {
 }
 function absoluteUrl(value, base) { try { return new URL(value, base).href; } catch { return null; } }
 function metaValue(html, key) {
-  const esc = key.replace(/[.*+?^$()|[\]\\]/g, '\\const data = JSON.parse(await readFile('data/events.json', 'utf8'));');
-  const patterns = [
-    new RegExp('<meta[^>]+(?:property|name|itemprop)=["\\']' + esc + '["\\'][^>]+content=["\\']([^"\\']+)["\\']', 'i'),
-    new RegExp('<meta[^>]+content=["\\']([^"\\']+)["\\'][^>]+(?:property|name|itemprop)=["\\']' + esc + '["\\']', 'i')
-  ];
-  for (const re of patterns) { const hit = html.match(re); if (hit) return hit[1].replace(/&amp;/g, '&'); }
+  const lower = String(key).toLowerCase();
+  const tags = html.match(/<meta\b[^>]*>/gi) || [];
+  for (const tag of tags) {
+    const name = (tag.match(/(?:property|name|itemprop)=["']([^"']+)["']/i) || [])[1];
+    const content = (tag.match(/content=["']([^"']+)["']/i) || [])[1];
+    if (name && content && name.toLowerCase() === lower) return content.replace(/&amp;/g, '&');
+  }
   return null;
 }
 function mediaLink(html, base) {
@@ -39,10 +40,10 @@ function mediaLink(html, base) {
   return hit ? hit[0] : null;
 }
 function storeLink(html, base) {
-  const re = /<a\\b([^>]+)href=["']([^"']+)["']([^>]*)>([\\s\\S]*?)<\\/a>/gi;
+  const re = /<a\b([^>]+)href=["']([^"']+)["']([^>]*)>([\s\S]*?)<\/a>/gi;
   let hit;
   while ((hit = re.exec(html))) {
-    const label = (hit[1] + ' ' + hit[3] + ' ' + hit[4]).replace(/<[^>]+>/g, ' ').replace(/\\s+/g, ' ');
+    const label = (hit[1] + ' ' + hit[3] + ' ' + hit[4]).replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ');
     if (/(buy|purchase|shop|order|pre-?order|réserver|acheter|commander|购买|预售|订金)/i.test(label)) {
       const url = absoluteUrl(hit[2], base);
       if (url && /^https?:/.test(url)) return url;
