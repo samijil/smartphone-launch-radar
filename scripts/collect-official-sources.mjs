@@ -7,9 +7,9 @@ import { readFile, writeFile } from 'node:fs/promises';
 
 const SOURCE_FILE = 'data/official-sources.json';
 const CANDIDATE_FILE = 'data/research-candidates.json';
-const MAX_ARTICLES_PER_SOURCE = 12;
+const MAX_ARTICLES_PER_SOURCE = 30;
 const FETCH_TIMEOUT_MS = 15_000;
-const PHONE_RE = /\b(phone|smartphone|iphone|galaxy\s+[szaf]|pixel\s*\d|pixel phone|fold|flip|find\s*[nxr]|reno\s*\d|xiaomi\s*\d|redmi|poco|razr|motorola edge|oneplus|honor magic|vivo\s*[xy]|nubia|nothing phone)\b/i;
+const PHONE_RE = /\b(phone|smartphone|iphone|galaxy\s+[szaf]|pixel\s*\d|pixel phone|fold|flip|find\s*[nxr]|reno\s*\d|xiaomi\s*\d|redmi|poco|razr|motorola edge|oneplus|honor magic|vivo\s*[xy]|nubia|nothing phone|magic\s*\d|mate\s*\w+|pura\s*\w+)\b/i;
 const EXCLUDE_RE = /\b(watch|buds|earbuds|tablet|pad|laptop|macbook|book|tv|monitor|washer|dryer|ssd|microwave|range|refrigerator)\b/i;
 const GENERIC_TITLE_RE = /^(iphone news|.*newsroom|.*smartphones?\s*\|.*|view all phones?)$/i;
 const NON_HTML_PATH_RE = /\.(?:pdf|zip|rar|7z|docx?|xlsx?|pptx?|mp4|webm|mp3)(?:$|[?#])/i;
@@ -105,6 +105,18 @@ function isoDateFromParts(day, monthName, year) {
   const test = new Date(Date.UTC(y, month - 1, d));
   if (d < 1 || d > 31 || test.getUTCMonth() !== month - 1 || test.getUTCDate() !== d) return null;
   return test.toISOString();
+}
+function genericDatedLaunch(text) {
+  const patterns = [
+    /\b(January|February|March|April|May|June|July|August|September|October|November|December)\s+(\d{1,2})(?:st|nd|rd|th)?(?:,\s*(\d{4}))?\b/i,
+    /\b(\d{1,2})(?:st|nd|rd|th)?\s+(January|February|March|April|May|June|July|August|September|October|November|December)(?:\s+(\d{4}))?\b/i
+  ];
+  for (const re of patterns) {
+    const m = text.match(re);
+    if (!m) continue;
+    return /^[A-Za-z]/.test(m[1]) ? isoDateFromParts(m[2], m[1], m[3]) : isoDateFromParts(m[1], m[2], m[3]);
+  }
+  return null;
 }
 function explicitLaunchDate(text) {
   const patterns = [
@@ -210,7 +222,7 @@ await Promise.all(sources.map(async (source) => {
         const officialUrl = canonicalUrl(page.finalUrl || link.url);
         if (!officialUrl || !candidateUrl(officialUrl, source.url)) return;
 
-        const date = explicitLaunchDate(text);
+        const date = explicitLaunchDate(text) || (source.role === 'industry' ? genericDatedLaunch(text) : null);
         const prior = previousByUrl.get(officialUrl);
         const image = mediaImageOf(page.text, officialUrl) || prior?.image || null;
         const streamUrl = mediaVideoOf(page.text, officialUrl) || prior?.streamUrl || null;
@@ -228,7 +240,7 @@ await Promise.all(sources.map(async (source) => {
           ...(image ? { image } : {}),
           ...(streamUrl ? { streamUrl } : {}),
           officialUrl,
-          sourceUrl: source.url,
+          sourceUrl: source.role === 'industry' ? officialUrl : source.url,
           collectedAt: new Date().toISOString(),
           requiresReview: !date
         });
