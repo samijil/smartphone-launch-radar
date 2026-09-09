@@ -1,23 +1,69 @@
 /**
- * Prépare un cycle mensuel sans inventer de lancement. Les sources candidates
- * doivent être consignées dans data/research-candidates.json par un collecteur
- * ou une revue humaine; seules les entrées avec une URL officielle et une date
- * ISO sont promues. Une valeur OFFICIAL existante n'est jamais rétrogradée.
+ * Construit le radar du mois courant sans inventer de lancement.
+ * Le cycle fusionne les annonces découvertes automatiquement et les backfills
+ * officiels vérifiés. Les événements passés, du jour et à venir du mois sont
+ * conservés tant qu'ils disposent d'une date ISO et d'une URL officielle.
  */
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
-const now = new Date(); const month = now.toISOString().slice(0, 7);
+
+const now = new Date();
+const month = new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Paris', year: 'numeric', month: '2-digit' })
+  .formatToParts(now)
+  .reduce((acc, part) => ({ ...acc, [part.type]: part.value }), {});
+const currentMonth = `${month.year}-${month.month}`;
+
 const data = JSON.parse(await readFile('data/events.json', 'utf8'));
-let candidates = [];
-try { candidates = JSON.parse(await readFile('data/research-candidates.json', 'utf8')).events ?? []; } catch { /* aucune collecte vérifiée disponible */ }
-let officialSeeds = [];
-try { officialSeeds = JSON.parse(await readFile('data/official-seed-events.json', 'utf8')).events ?? []; } catch { /* aucune amorce officielle disponible */ }
-candidates = [...officialSeeds, ...candidates];
-const old = new Map(data.events.map(e => [e.id, e]));
-const valid = [...new Map(candidates.map(item => [item.id, item])).values()].filter(e => e.confidence === 'OFFICIAL' && e.officialUrl && !Number.isNaN(Date.parse(e.date)) && e.date.startsWith(month));
-for (const item of valid) { const prior = old.get(item.id); old.set(item.id, prior?.confidence === 'OFFICIAL' ? { ...item, ...prior } : item); }
-data.month = month; data.updatedAt = now.toISOString(); data.events = [...old.values()].filter(e => e.date.startsWith(month));
-data.sourcesNote = `Mise à jour automatisée du ${now.toISOString()}: seules les annonces disposant d'une URL officielle et d'une date ISO sont publiées automatiquement. Les résultats rapportés et non confirmés nécessitent une revue.`;
+
+async function readEvents(path) {
+  try {
+    const parsed = JSON.parse(await readFile(path, 'utf8'));
+    return Array.isArray(parsed.events) ? parsed.events : [];
+  } catch {
+    return [];
+  }
+}
+
+const collected = await readEvents('data/research-candidates.json');
+const officialSeeds = await readEvents('data/official-seed-events.json');
+
+// Seed events win over a duplicate automated candidate only when both have the
+// same id: the seed is the manually verified canonical backfill.
+const byId = new Map();
+for (const item of [...collected, ...officialSeeds]) byId.set(item.id, item);
+
+const valid = [...byId.values()].filter(e =>
+  e?.confidence === 'OFFICIAL' &&
+  typeof e.officialUrl === 'string' &&
+  e.officialUrl.length > 0 &&
+  typeof e.date === 'string' &&
+  !Number.isNaN(Date.parse(e.date)) &&
+  e.date.startsWith(currentMonth)
+);
+
+const published = new Map();
+for (const event of data.events || []) {
+  if (typeof event.date === 'string' && event.date.startsWith(currentMonth)) published.set(event.id, event);
+}
+for (const item of valid) {
+  const prior = published.get(item.id);
+  published.set(item.id, prior?.confidence === 'OFFICIAL'
+    ? { ...prior, ...item, specifications: { ...(prior.specifications || {}), ...(item.specifications || {}) } }
+    : item);
+}
+
+data.month = currentMonth;
+data.updatedAt = now.toISOString();
+data.events = [...published.values()]
+  .filter(e => e.date.startsWith(currentMonth))
+  .sort((a, b) => new Date(a.date) - new Date(b.date));
+
+data.sourcesNote = `Mise à jour automatisée du ${now.toISOString()}: événements passés et à venir du mois ${currentMonth}, publiés uniquement avec date ISO et URL officielle. Les candidats non confirmés restent exclus du radar.`;
+
 await writeFile('data/events.json', `${JSON.stringify(data, null, 2)}\n`);
 await mkdir('reports', { recursive: true });
-await writeFile(`reports/monthly-update-${month}.md`, `# Rapport de mise à jour — ${month}\n\n- Exécuté : ${now.toISOString()}\n- Candidats officiels validés : ${valid.length}\n- Événements publiés : ${data.events.length}\n- Règle : aucune donnée OFFICIAL existante n’est rétrogradée.\n`);
-console.log(`Mise à jour prudente terminée pour ${month}: ${valid.length} candidat(s) officiel(s).`);
+await writeFile(
+  `reports/monthly-update-${currentMonth}.md`,
+  `# Rapport de mise à jour — ${currentMonth}\n\n- Exécuté : ${now.toISOString()}\n- Candidats automatiques lus : ${collected.length}\n- Backfills officiels lus : ${officialSeeds.length}\n- Candidats officiels valides du mois : ${valid.length}\n- Événements publiés : ${data.events.length}\n- Règle : événements passés, du jour et à venir du mois conservés; aucune date sans URL officielle n'est publiée.\n`
+);
+
+console.log(`Mise à jour mensuelle terminée pour ${currentMonth}: ${valid.length} candidat(s) officiel(s), ${data.events.length} événement(s) publiés.`);
