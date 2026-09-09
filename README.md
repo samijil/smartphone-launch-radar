@@ -12,11 +12,12 @@ npm test
 
 - `npm run validate:data` vérifie la structure et les URL de `data/events.json`.
 - `npm run build` produit le site dans `dist/`.
-- `npm run update:monthly` applique la mise à jour prudente et écrit un rapport dans `reports/`.
+- `npm run collect:official` interroge les sources officielles configurées et met à jour `data/research-candidates.json`.
+- `npm run update:monthly` lance d’abord la collecte officielle, puis applique la promotion prudente et écrit un rapport dans `reports/`.
 
 ## Données et fiabilité
 
-Les données sont dans [`data/events.json`](data/events.json). Chaque événement contient l’identifiant, le modèle, la marque, une date ISO, le fuseau, la région, le statut, la confiance, le résumé, les spécifications et uniquement les liens pertinents réellement disponibles.
+Les données sont dans [`data/events.json`](data/events.json). Les candidats bruts sont stockés séparément dans [`data/research-candidates.json`](data/research-candidates.json) et les sources autorisées dans [`data/official-sources.json`](data/official-sources.json). Chaque événement contient l’identifiant, le modèle, la marque, une date ISO, le fuseau, la région, le statut, la confiance, le résumé, les spécifications et uniquement les liens pertinents réellement disponibles.
 
 | Valeur | Affichage | Règle |
 | --- | --- | --- |
@@ -30,18 +31,19 @@ Les statuts sont `UPCOMING`, `LIVE`, `COMPLETED` et `TBC`. L’interface convert
 
 L’initialisation ne publie aucun lancement pour septembre 2026 : aucune date officielle vérifiable n’a été trouvée dans le contexte de création. C’est intentionnel, plutôt que de publier une date spéculative. Le dashboard affiche cet état et le système est prêt à recevoir des annonces documentées.
 
-## Automatisation mensuelle
+## Collecte officielle et automatisation
 
-[`.github/workflows/monthly-update.yml`](.github/workflows/monthly-update.yml) s’exécute le premier jour de chaque mois à 06:15 UTC, ou manuellement. Le script :
+[`.github/workflows/monthly-update.yml`](.github/workflows/monthly-update.yml) s’exécute chaque jour à 05:15 UTC, ou manuellement. Il :
 
-1. détermine le mois courant ;
-2. lit des candidats documentés dans `data/research-candidates.json` lorsqu’ils sont disponibles ;
-3. ne retient automatiquement que les candidats `OFFICIAL` ayant une URL officielle et une date ISO du mois ;
-4. n’écrase jamais une entrée officielle existante par une confiance inférieure ;
-5. valide le JSON, génère le site et ajoute un rapport dans `reports/` ;
-6. commit/pousse seulement si les données ont changé.
+1. interroge automatiquement les pages officielles listées dans `data/official-sources.json` ;
+2. suit les liens officiels pertinents et alimente `data/research-candidates.json` sans dépendre d’une source secondaire ;
+3. n’extrait une date que lorsqu’une formulation explicite de disponibilité/lancement est détectée ; une date de publication n’est jamais assimilée à une date de lancement ;
+4. ne retient automatiquement pour le radar que les candidats `OFFICIAL` ayant une URL officielle et une date ISO du mois ;
+5. n’écrase jamais une entrée officielle existante par une confiance inférieure ;
+6. valide le JSON, génère le site et ajoute un rapport dans `reports/` ;
+7. commit/pousse seulement si les données ont changé.
 
-La recherche éditoriale doit privilégier les salles de presse, pages produit, pages d’événement et chaînes YouTube des fabricants. Les horaires, régions et liens de streaming doivent être complétés uniquement lorsqu’ils sont publiés. Ce mécanisme ne garantit pas une exhaustivité absolue : elle dépend des annonces publiques disponibles et de leur vérification.
+Le collecteur utilise uniquement des pages publiques officielles configurées dans le dépôt. Les horaires, régions et liens de streaming ne sont promus que lorsqu’ils sont publiés explicitement. Une erreur de collecte est consignée dans le fichier des candidats sans transformer une information absente en annonce. Ce mécanisme ne garantit pas une exhaustivité absolue : elle dépend des annonces publiques disponibles et de leur vérification.
 
 ## GitHub Pages
 

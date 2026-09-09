@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "sources": [
+    {
+      "id": "apple-iphone",
+      "brand": "Apple",
+      "url": "https://www.apple.com/fr/newsroom/topics/iphone/",
+      "allowedHosts": [
+        "apple.com",
+        "www.apple.com"
+      ],
+      "language": "fr"
+    },
+    {
+      "id": "samsung-global",
+      "brand": "Samsung",
+      "url": "https://news.samsung.com/global/category/press-resources/press-release",
+      "allowedHosts": [
+        "news.samsung.com"
+      ],
+      "language": "en"
+    },
+    {
+      "id": "oppo-global",
+      "brand": "OPPO",
+      "url": "https://www.oppo.com/en/newsroom/",
+      "allowedHosts": [
+        "oppo.com",
+        "www.oppo.com"
+      ],
+      "language": "en"
+    },
+    {
+      "id": "google-pixel",
+      "brand": "Google",
+      "url": "https://blog.google/products-and-platforms/devices/pixel/",
+      "allowedHosts": [
+        "blog.google",
+        "store.google.com"
+      ],
+      "language": "en"
+    },
+    {
+      "id": "xiaomi-rss",
+      "brand": "Xiaomi",
+      "url": "https://xiaomi.gcs-web.com/rss-feeds",
+      "allowedHosts": [
+        "xiaomi.com",
+        "gcs-web.com",
+        "xiaomi.gcs-web.com"
+      ],
+      "language": "en"
+    }
+  ]
+}

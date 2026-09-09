@@ -3,7 +3,7 @@ on:
   push:
     branches: [main]
   workflow_run:
-    workflows: [Monthly launch-data update]
+    workflows: [Official source collection and launch-data update]
     types: [completed]
 permissions:
   contents: read
