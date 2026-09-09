@@ -1,8 +1,8 @@
 {
   "$schema": "https://smartphone-launch-radar.local/schema/events-v1",
   "month": "2026-09",
-  "updatedAt": "2026-09-09T11:04:14.744Z",
-  "sourcesNote": "Mise à jour automatisée du 2026-09-09T11:04:14.744Z: événements du mois enrichis depuis leurs pages officielles avec photos, diffusion/replay et liens d'achat ou précommande lorsqu'ils existent.",
+  "updatedAt": "2026-09-09T11:05:49.731Z",
+  "sourcesNote": "Mise à jour automatisée du 2026-09-09T11:05:49.731Z: événements du mois enrichis depuis leurs pages officielles avec photos, diffusion/replay et liens d'achat ou précommande lorsqu'ils existent.",
   "events": [
     {
       "id": "poco-f9-series-2026-09-01",
@@ -83,8 +83,7 @@
       "streamUrl": "https://www.apple.com/fr/apple-events/",
       "sourceUrl": "https://developer.apple.com/news/?id=s6spdug0",
       "requiresReview": false,
-      "image": "https://www.apple.com/v/apple-events/home/ak/images/meta/apple_events__d0b4ek86reaa_og.png?202608260837",
-      "productUrl": "https://www.apple.com/fr/retail/business/"
+      "image": "https://www.apple.com/v/apple-events/home/ak/images/meta/apple_events__d0b4ek86reaa_og.png?202608260837"
     },
     {
       "id": "honor-magic9-series-2026-09-28",
@@ -107,8 +106,7 @@
       "requiresReview": false,
       "reservationUrl": "https://www.honor.com/cn/m/product/10086202924845.html",
       "image": "https://image.thum.io/get/width/1200/crop/675/noanimate/https%3A%2F%2Fclub.honor.com%2Fcn%2Fthread-30392255-1-1.html",
-      "imageFallback": "official-page-snapshot",
-      "productUrl": "https://www.honor.com/cn/shop/https&#x3a;&#x2f;&#x2f;www.honor.com&#x2f;cn&#x2f;shop&#x2f;"
+      "imageFallback": "official-page-snapshot"
     }
   ]
 }
