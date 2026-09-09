@@ -129,14 +129,14 @@ const officialSeeds = await readEvents('data/official-seed-events.json');
 const byId = new Map();
 for (const item of [...collected, ...officialSeeds]) byId.set(item.id, item);
 
-const valid = [...byId.values()].filter(e =>
-  e?.confidence === 'OFFICIAL' &&
-  typeof e.officialUrl === 'string' &&
-  e.officialUrl.length > 0 &&
-  typeof e.date === 'string' &&
-  !Number.isNaN(Date.parse(e.date)) &&
-  e.date.startsWith(currentMonth)
-);
+const valid = [...byId.values()].filter(e => {
+  if (!e || !['OFFICIAL', 'REPORTED'].includes(e.confidence)) return false;
+  if (typeof e.date !== 'string' || Number.isNaN(Date.parse(e.date)) || !e.date.startsWith(currentMonth)) return false;
+  // OFFICIAL requires a manufacturer page. REPORTED is allowed from a trusted
+  // specialist source, but must retain the article URL as its traceable source.
+  if (e.confidence === 'OFFICIAL') return typeof e.officialUrl === 'string' && e.officialUrl.length > 0;
+  return typeof (e.sourceUrl || e.officialUrl) === 'string' && (e.sourceUrl || e.officialUrl).length > 0;
+});
 
 const published = new Map();
 for (const event of data.events || []) {
@@ -153,7 +153,7 @@ data.month = currentMonth;
 data.updatedAt = now.toISOString();
 const uniqueByOfficialUrl = new Map();
 for (const event of [...published.values()].filter(e => e.date.startsWith(currentMonth)).sort((a,b)=>new Date(a.date)-new Date(b.date))) {
-  const key = String(event.officialUrl || '').replace(/\/$/, '');
+  const key = String(event.officialUrl || event.sourceUrl || event.id).replace(/\/$/, '');
   const prior = uniqueByOfficialUrl.get(key);
   if (!prior) uniqueByOfficialUrl.set(key, event);
   else {
@@ -164,13 +164,15 @@ for (const event of [...published.values()].filter(e => e.date.startsWith(curren
 }
 data.events = await Promise.all([...uniqueByOfficialUrl.values()].map(enrichOfficialMedia));
 
-data.sourcesNote = `Mise à jour automatisée du ${now.toISOString()}: événements du mois enrichis depuis leurs pages officielles avec photos, diffusion/replay et liens d'achat ou précommande lorsqu'ils existent.`;
+const officialCount = data.events.filter(e => e.confidence === 'OFFICIAL').length;
+const reportedCount = data.events.filter(e => e.confidence === 'REPORTED').length;
+data.sourcesNote = `Mise à jour automatisée du ${now.toISOString()}: ${officialCount} événement(s) confirmés officiellement et ${reportedCount} événement(s) rapportés par des médias spécialisés fiables, avec niveau de confiance affiché. Photos, diffusion et liens commerciaux sont enrichis lorsqu'ils existent.`;
 
 await writeFile('data/events.json', `${JSON.stringify(data, null, 2)}\n`);
 await mkdir('reports', { recursive: true });
 await writeFile(
   `reports/monthly-update-${currentMonth}.md`,
-  `# Rapport de mise à jour — ${currentMonth}\n\n- Exécuté : ${now.toISOString()}\n- Candidats automatiques lus : ${collected.length}\n- Backfills officiels lus : ${officialSeeds.length}\n- Candidats officiels valides du mois : ${valid.length}\n- Événements publiés : ${data.events.length}\n- Règle : événements passés, du jour et à venir du mois conservés; aucune date sans URL officielle n'est publiée.\n`
+  `# Rapport de mise à jour — ${currentMonth}\n\n- Exécuté : ${now.toISOString()}\n- Candidats automatiques lus : ${collected.length}\n- Backfills officiels lus : ${officialSeeds.length}\n- Candidats publiables du mois (OFFICIAL + REPORTED) : ${valid.length}\n- Événements publiés : ${data.events.length}\n- Règle : OFFICIAL exige une page constructeur; REPORTED exige une source spécialisée fiable et une date ISO. Le niveau de confiance est affiché dans le dashboard.\n`
 );
 
-console.log(`Mise à jour mensuelle terminée pour ${currentMonth}: ${valid.length} candidat(s) officiel(s), ${data.events.length} événement(s) publiés.`);
+console.log(`Mise à jour mensuelle terminée pour ${currentMonth}: ${valid.length} candidat(s) OFFICIAL/REPORTED, ${data.events.length} événement(s) publiés.`);
