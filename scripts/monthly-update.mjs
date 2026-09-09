@@ -53,23 +53,27 @@ function storeLink(html, base) {
 }
 async function enrichOfficialMedia(event) {
   const out = { ...event };
-  for (const page of [event.officialUrl, event.sourceUrl].filter(Boolean)) {
-    try {
-      const fetched = await fetchOfficialHtml(page);
-      if (!out.image) {
-        const image = metaValue(fetched.html, 'og:image') || metaValue(fetched.html, 'twitter:image') || metaValue(fetched.html, 'image');
-        if (image) out.image = absoluteUrl(image, fetched.url);
-      }
-      if (!out.streamUrl) {
-        const stream = mediaLink(fetched.html, fetched.url);
-        if (stream) out.streamUrl = stream;
-      }
-      if (!out.productUrl) {
-        const product = storeLink(fetched.html, fetched.url);
-        if (product) out.productUrl = product;
-      }
-    } catch (error) {
-      out.enrichmentErrors = [...(out.enrichmentErrors || []), { url: page, error: String(error.message || error) }];
+  const pages = [event.officialUrl, event.sourceUrl].filter(Boolean);
+  const results = await Promise.all(pages.map(async page => {
+    try { return { page, ...(await fetchOfficialHtml(page)) }; }
+    catch (error) { return { page, error: String(error.message || error) }; }
+  }));
+  for (const fetched of results) {
+    if (fetched.error) {
+      out.enrichmentErrors = [...(out.enrichmentErrors || []), { url: fetched.page, error: fetched.error }];
+      continue;
+    }
+    if (!out.image) {
+      const image = metaValue(fetched.html, 'og:image') || metaValue(fetched.html, 'twitter:image') || metaValue(fetched.html, 'image');
+      if (image) out.image = absoluteUrl(image, fetched.url);
+    }
+    if (!out.streamUrl) {
+      const stream = mediaLink(fetched.html, fetched.url);
+      if (stream) out.streamUrl = stream;
+    }
+    if (!out.productUrl) {
+      const product = storeLink(fetched.html, fetched.url);
+      if (product) out.productUrl = product;
     }
   }
   return out;
