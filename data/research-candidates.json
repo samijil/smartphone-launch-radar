@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-09T10:14:46.312Z",
+  "generatedAt": "2026-09-09T10:16:03.729Z",
   "sourceCount": 5,
   "events": [
     {
@@ -16,14 +16,14 @@
       "image": "",
       "officialUrl": "https://www.apple.com/fr/newsroom/2026/03/apple-introduces-iphone-17e/",
       "sourceUrl": "https://www.apple.com/fr/newsroom/topics/iphone/",
-      "collectedAt": "2026-09-09T10:14:30.511Z",
+      "collectedAt": "2026-09-09T10:15:47.749Z",
       "requiresReview": true
     }
   ],
   "errors": [
     {
       "source": "samsung-global",
-      "url": "https://news.samsung.com/global/category/press-release",
+      "url": "https://news.samsung.com/global/samsung-galaxy-z-fold8-ultra-fold8-and-flip8foldables-perfected-for-every-way-of-living",
       "error": "Request timed out after 15000ms"
     }
   ]
