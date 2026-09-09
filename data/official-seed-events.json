@@ -17,9 +17,7 @@
           "POCO F9 Ultra"
         ]
       },
-      "image": "",
       "officialUrl": "https://www.mi.com/global/launch/poco-f9-series-launch/",
-      "streamUrl": "",
       "sourceUrl": "https://www.mi.com/fr/support/terms/poco-f9-series/",
       "requiresReview": false
     },
@@ -36,9 +34,7 @@
       "specifications": {
         "model": "Galaxy S26 FE"
       },
-      "image": "",
       "officialUrl": "https://news.samsung.com/fr/galaxy-s26-fe",
-      "streamUrl": "",
       "sourceUrl": "https://news.samsung.com/fr/galaxy-s26-fe",
       "requiresReview": false
     },
@@ -55,9 +51,7 @@
       "specifications": {
         "model": "HUAWEI Mate XT 2 | ULTIMATE DESIGN"
       },
-      "image": "",
       "officialUrl": "https://consumer.huawei.com/cn/press/events/2026/harmonyos-7-and-huawei-mate-xt-2-and-all-scenario-new-product-launch-event/",
-      "streamUrl": "",
       "sourceUrl": "https://consumer.huawei.com/cn/support/content/zh-cn16112373/",
       "requiresReview": false
     },
@@ -72,7 +66,6 @@
       "confidence": "OFFICIAL",
       "summary": "Événement spécial Apple officiel, annoncé pour le 9 septembre à 10 h PT, avec diffusion sur Apple.com, Apple TV et YouTube Live.",
       "specifications": {},
-      "image": "",
       "officialUrl": "https://www.apple.com/fr/apple-events/",
       "streamUrl": "https://www.apple.com/fr/apple-events/",
       "sourceUrl": "https://developer.apple.com/news/?id=s6spdug0",
@@ -93,9 +86,7 @@
           "HONOR Magic9 Series"
         ]
       },
-      "image": "",
       "officialUrl": "https://club.honor.com/cn/thread-30392255-1-1.html",
-      "streamUrl": "",
       "sourceUrl": "https://www.honor.com/cn/shop/notice-18130",
       "requiresReview": false
     }
