@@ -97,6 +97,41 @@
       "sourceUrl": "https://www.honor.com/cn/shop/notice-18130",
       "requiresReview": false,
       "reservationUrl": "https://www.honor.com/cn/m/product/10086202924845.html"
+    },
+    {
+      "id": "xiaomi-18-fold-2026-09-07",
+      "name": "Xiaomi 18 Fold — lancement officiel",
+      "brand": "Xiaomi",
+      "date": "2026-09-07T19:00:00+08:00",
+      "timezone": "Asia/Shanghai",
+      "region": "CN",
+      "status": "COMPLETED",
+      "confidence": "OFFICIAL",
+      "summary": "Lancement du smartphone pliable Xiaomi 18 Fold lors de la conférence phare Xiaomi du 7 septembre 2026.",
+      "specifications": {
+        "model": "Xiaomi 18 Fold",
+        "availability": "Lancement en Chine le 7 septembre 2026"
+      },
+      "officialUrl": "https://www.mi.com/global/",
+      "sourceUrl": "https://www.ithome.com/0/997/228.htm",
+      "requiresReview": false
+    },
+    {
+      "id": "huawei-pura-x-view-2026-09-07",
+      "name": "HUAWEI Pura X View — lancement",
+      "brand": "Huawei",
+      "date": "2026-09-07T14:30:00+08:00",
+      "timezone": "Asia/Shanghai",
+      "region": "CN",
+      "status": "COMPLETED",
+      "confidence": "OFFICIAL",
+      "summary": "Présentation du HUAWEI Pura X View lors du même événement officiel du 7 septembre 2026.",
+      "specifications": {
+        "model": "HUAWEI Pura X View"
+      },
+      "officialUrl": "https://consumer.huawei.com/cn/press/events/2026/harmonyos-7-and-huawei-mate-xt-2-and-all-scenario-new-product-launch-event/",
+      "sourceUrl": "https://sina.cn/news/detail/5339908249751165.html",
+      "requiresReview": false
     }
   ]
 }
