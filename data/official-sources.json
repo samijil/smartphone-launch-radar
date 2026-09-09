@@ -50,6 +50,36 @@
         "xiaomi.gcs-web.com"
       ],
       "language": "en"
+    },
+    {
+      "id": "huawei-cn-events",
+      "brand": "Huawei",
+      "url": "https://consumer.huawei.com/cn/press/events/",
+      "allowedHosts": [
+        "consumer.huawei.com"
+      ],
+      "language": "zh"
+    },
+    {
+      "id": "honor-cn-news",
+      "brand": "HONOR",
+      "url": "https://www.honor.com/cn/news/",
+      "allowedHosts": [
+        "honor.com",
+        "www.honor.com",
+        "club.honor.com"
+      ],
+      "language": "zh"
+    },
+    {
+      "id": "motorola-news",
+      "brand": "Motorola",
+      "url": "https://news.motorola.com/",
+      "allowedHosts": [
+        "motorola.com",
+        "news.motorola.com"
+      ],
+      "language": "en"
     }
   ]
 }
