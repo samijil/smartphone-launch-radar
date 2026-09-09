@@ -120,7 +120,12 @@ for (const item of valid) {
 
 data.month = currentMonth;
 data.updatedAt = now.toISOString();
-data.events = await Promise.all([...published.values()]\n  .filter(e => e.date.startsWith(currentMonth))\n  .sort((a, b) => new Date(a.date) - new Date(b.date))\n  .map(enrichOfficialMedia));
+data.events = await Promise.all(
+  [...published.values()]
+    .filter(e => e.date.startsWith(currentMonth))
+    .sort((a, b) => new Date(a.date) - new Date(b.date))
+    .map(enrichOfficialMedia)
+);
 
 data.sourcesNote = `Mise à jour automatisée du ${now.toISOString()}: événements du mois enrichis depuis leurs pages officielles avec photos, diffusion/replay et liens d'achat ou précommande lorsqu'ils existent.`;
 
