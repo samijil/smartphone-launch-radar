@@ -1,8 +1,8 @@
 {
   "$schema": "https://smartphone-launch-radar.local/schema/events-v1",
   "month": "2026-09",
-  "updatedAt": "2026-09-09T11:05:49.731Z",
-  "sourcesNote": "Mise à jour automatisée du 2026-09-09T11:05:49.731Z: événements du mois enrichis depuis leurs pages officielles avec photos, diffusion/replay et liens d'achat ou précommande lorsqu'ils existent.",
+  "updatedAt": "2026-09-09T11:51:37.321Z",
+  "sourcesNote": "Mise à jour automatisée du 2026-09-09T11:51:37.321Z: événements du mois enrichis depuis leurs pages officielles avec photos, diffusion/replay et liens d'achat ou précommande lorsqu'ils existent.",
   "events": [
     {
       "id": "poco-f9-series-2026-09-01",
@@ -67,6 +67,25 @@
       "productUrl": "https://consumer.huawei.com/cn/phones/mate-xt-2-ultimate-design/",
       "image": "https://image.thum.io/get/width/1200/crop/675/noanimate/https%3A%2F%2Fconsumer.huawei.com%2Fcn%2Fpress%2Fevents%2F2026%2Fharmonyos-7-and-huawei-mate-xt-2-and-all-scenario-new-product-launch-event%2F",
       "imageFallback": "official-page-snapshot"
+    },
+    {
+      "id": "xiaomi-18-fold-2026-09-07",
+      "name": "Xiaomi 18 Fold — lancement officiel",
+      "brand": "Xiaomi",
+      "date": "2026-09-07T19:00:00+08:00",
+      "timezone": "Asia/Shanghai",
+      "region": "CN",
+      "status": "COMPLETED",
+      "confidence": "OFFICIAL",
+      "summary": "Lancement du smartphone pliable Xiaomi 18 Fold lors de la conférence phare Xiaomi du 7 septembre 2026.",
+      "specifications": {
+        "model": "Xiaomi 18 Fold",
+        "availability": "Lancement en Chine le 7 septembre 2026"
+      },
+      "officialUrl": "https://www.mi.com/global/",
+      "sourceUrl": "https://www.ithome.com/0/997/228.htm",
+      "requiresReview": false,
+      "image": "https://i02.appmifile.com/111_operator_global/31/08/2026/ae311013b41b20d6f64e8515208749f9.png"
     },
     {
       "id": "apple-special-event-2026-09-09",
