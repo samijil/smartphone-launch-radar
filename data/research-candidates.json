@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-09T11:02:23.788Z",
+  "generatedAt": "2026-09-09T11:04:14.652Z",
   "sourceCount": 15,
   "events": [
     {
@@ -15,24 +15,7 @@
       "specifications": {},
       "officialUrl": "https://www.vivo.com/en/about-vivo/news/european-cup-opening",
       "sourceUrl": "https://www.vivo.com/en/news/",
-      "collectedAt": "2026-09-09T11:02:11.914Z",
-      "requiresReview": true
-    },
-    {
-      "id": "nothing-news-inexpensive-phone-3-cases",
-      "name": "Inexpensive Phone (3) cases?",
-      "brand": "Nothing",
-      "date": null,
-      "timezone": "UTC",
-      "region": "GLOBAL",
-      "status": "TBC",
-      "confidence": "OFFICIAL",
-      "summary": "Inexpensive Phone (3) cases? Loading... This site is best viewed in a modern browser with JavaScript enabled. Something went wrong while trying to load the full version of this site. Try hard-refreshing this page to fix the error. Inexpensive Phone (3) cases? DancingZebra Hey, any suggestions for a good, not too expensive back case for the Nothing Phone 3? I like Spigen Case Zero but it is expensive for a back cover Daniel DancingZebra Try from JETech UpawNothing DancingZebra I have quite a lot of covers this was the best cheap one I found: - https://amzn.eu/d/0gC8SU92 I needed a magsafe case ",
-      "specifications": {},
-      "image": "https://cdn.nothing.community/assets/site-image-hhrr5riu.png",
-      "officialUrl": "https://nothing.community/d/62553-inexpensive-phone-3-cases",
-      "sourceUrl": "https://nothing.community/",
-      "collectedAt": "2026-09-09T11:02:11.025Z",
+      "collectedAt": "2026-09-09T11:04:04.286Z",
       "requiresReview": true
     },
     {
@@ -49,7 +32,40 @@
       "image": "https://cdn.nothing.community/2026-09-09/1788946151-256209-agni-20260909-144659-0000.png",
       "officialUrl": "https://nothing.community/d/62573-nothing-phone-5a-pro-final-concept-design",
       "sourceUrl": "https://nothing.community/",
-      "collectedAt": "2026-09-09T11:02:10.881Z",
+      "collectedAt": "2026-09-09T11:04:02.937Z",
+      "requiresReview": true
+    },
+    {
+      "id": "nothing-news-inexpensive-phone-3-cases",
+      "name": "Inexpensive Phone (3) cases?",
+      "brand": "Nothing",
+      "date": null,
+      "timezone": "UTC",
+      "region": "GLOBAL",
+      "status": "TBC",
+      "confidence": "OFFICIAL",
+      "summary": "Inexpensive Phone (3) cases? Loading... This site is best viewed in a modern browser with JavaScript enabled. Something went wrong while trying to load the full version of this site. Try hard-refreshing this page to fix the error. Inexpensive Phone (3) cases? DancingZebra Hey, any suggestions for a good, not too expensive back case for the Nothing Phone 3? I like Spigen Case Zero but it is expensive for a back cover Daniel DancingZebra Try from JETech UpawNothing DancingZebra I have quite a lot of covers this was the best cheap one I found: - https://amzn.eu/d/0gC8SU92 I needed a magsafe case ",
+      "specifications": {},
+      "image": "https://cdn.nothing.community/assets/site-image-hhrr5riu.png",
+      "officialUrl": "https://nothing.community/d/62553-inexpensive-phone-3-cases",
+      "sourceUrl": "https://nothing.community/",
+      "collectedAt": "2026-09-09T11:04:02.880Z",
+      "requiresReview": true
+    },
+    {
+      "id": "honor-cn-news-robot-phone",
+      "name": "荣耀Robot Phone全球新品发布会 | 荣耀官方网站",
+      "brand": "HONOR",
+      "date": null,
+      "timezone": "UTC",
+      "region": "GLOBAL",
+      "status": "TBC",
+      "confidence": "OFFICIAL",
+      "summary": "荣耀Robot Phone全球新品发布会 | 荣耀官方网站 Skip to main content Skip to About Honor TOP 国补 手机 最新产品 荣耀Robot Phone系列 荣耀Magic系列 荣耀数字系列 荣耀WIN系列 荣耀Power系列 荣耀X系列 荣耀Play系列 荣耀畅玩系列 New 荣耀Robot Phone New 荣耀600 Pro New 荣耀600 超级版 New 荣耀600 元气版 New 荣耀Play11T 更多产品 产品对比 New 荣耀Robot Phone 更多产品 产品对比 New 荣耀Magic V6 New 荣耀Magic8 Pro Air New 荣耀Magic8 RSR | 保时捷设计 New 荣耀Magic V Flip2 New 荣耀Magic8 Pro 更多产品 产品对比 New 荣耀600 Pro New 荣耀600 超级版 New 荣耀600 元气版 New 荣耀500 Pro MOLLY 20周年限定版 New 荣耀500 Pro 更多产品 产品对比 New 荣耀WIN Turbo New 荣耀WIN RT New 荣耀WIN 更多产品 产品对比 New 荣耀Power2 New 荣耀Power 更多产品 产品对比 New 荣耀X80 Pro Max New 荣耀X70 Pro Max New 荣耀X",
+      "specifications": {},
+      "officialUrl": "https://www.honor.com/cn/activity/honor-robotphone-launch/",
+      "sourceUrl": "https://www.honor.com/cn/news/",
+      "collectedAt": "2026-09-09T11:04:01.689Z",
       "requiresReview": true
     },
     {
@@ -66,23 +82,7 @@
       "image": "https://consumer.huawei.com/content/dam/huawei-cbg-site/cn/mkt/pdp/harmonyos-computer/matebook-fold-ultimate-design-2026/list/gold.png",
       "officialUrl": "https://consumer.huawei.com/cn/harmonyos-computer/matebook-fold-ultimate-design/",
       "sourceUrl": "https://consumer.huawei.com/cn/press/events/",
-      "collectedAt": "2026-09-09T11:02:09.282Z",
-      "requiresReview": true
-    },
-    {
-      "id": "honor-cn-news-robot-phone",
-      "name": "荣耀Robot Phone - 嗨！新朋友 | 荣耀官方网站",
-      "brand": "HONOR",
-      "date": null,
-      "timezone": "UTC",
-      "region": "GLOBAL",
-      "status": "TBC",
-      "confidence": "OFFICIAL",
-      "summary": "荣耀Robot Phone - 嗨！新朋友 | 荣耀官方网站 Skip to main content Skip to About Honor TOP 国补 手机 最新产品 荣耀Robot Phone系列 荣耀Magic系列 荣耀数字系列 荣耀WIN系列 荣耀Power系列 荣耀X系列 荣耀Play系列 荣耀畅玩系列 New 荣耀Robot Phone New 荣耀600 Pro New 荣耀600 超级版 New 荣耀600 元气版 New 荣耀Play11T 更多产品 产品对比 New 荣耀Robot Phone 更多产品 产品对比 New 荣耀Magic V6 New 荣耀Magic8 Pro Air New 荣耀Magic8 RSR | 保时捷设计 New 荣耀Magic V Flip2 New 荣耀Magic8 Pro 更多产品 产品对比 New 荣耀600 Pro New 荣耀600 超级版 New 荣耀600 元气版 New 荣耀500 Pro MOLLY 20周年限定版 New 荣耀500 Pro 更多产品 产品对比 New 荣耀WIN Turbo New 荣耀WIN RT New 荣耀WIN 更多产品 产品对比 New 荣耀Power2 New 荣耀Power 更多产品 产品对比 New 荣耀X80 Pro Max New 荣耀X70 Pro Max New 荣耀",
-      "specifications": {},
-      "officialUrl": "https://www.honor.com/cn/phones/honor-robot-phone/",
-      "sourceUrl": "https://www.honor.com/cn/news/",
-      "collectedAt": "2026-09-09T11:02:08.933Z",
+      "collectedAt": "2026-09-09T11:04:00.736Z",
       "requiresReview": true
     },
     {
@@ -99,7 +99,7 @@
       "image": "https://www.apple.com/newsroom/images/2026/03/apple-introduces-iphone-17e/geo/Apple-iPhone-17e-hero-geo-260302-lp.jpg.og.jpg?202608191847",
       "officialUrl": "https://www.apple.com/fr/newsroom/2026/03/apple-introduces-iphone-17e/",
       "sourceUrl": "https://www.apple.com/fr/newsroom/topics/iphone/",
-      "collectedAt": "2026-09-09T11:02:08.651Z",
+      "collectedAt": "2026-09-09T11:04:00.579Z",
       "requiresReview": true
     }
   ],
