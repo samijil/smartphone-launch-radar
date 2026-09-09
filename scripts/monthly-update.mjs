@@ -76,8 +76,8 @@ function storeLink(html, base) {
 async function enrichOfficialMedia(event) {
   const out = { ...event };
   if (out.productUrl && /(?:\/order\/list|\/shop\/privilege)/i.test(new URL(out.productUrl).pathname)) delete out.productUrl;
-  if (out.brand === 'Apple' && out.productUrl && /\/shop\/goto\//i.test(out.productUrl)) delete out.productUrl;
-  if (out.brand === 'HONOR' && out.productUrl && /(?:\/shop\/https|\/shop\/privilege)/i.test(out.productUrl)) delete out.productUrl;
+  if (out.brand === 'Apple' && out.productUrl) delete out.productUrl;
+  if (out.brand === 'HONOR' && out.productUrl && /(?:&#x|\/shop\/https|\/shop\/privilege)/i.test(out.productUrl)) delete out.productUrl;
   const pages = [event.officialUrl, event.sourceUrl].filter(Boolean);
   const results = await Promise.all(pages.map(async page => {
     try { return { page, ...(await fetchOfficialHtml(page)) }; }
