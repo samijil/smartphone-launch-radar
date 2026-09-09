@@ -68,14 +68,16 @@ function storeLink(html, base) {
     const label = (hit[1] + ' ' + hit[3] + ' ' + hit[4]).replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ');
     if (/(buy|purchase|shop|order|pre-?order|réserver|acheter|commander|购买|预售|订金)/i.test(label)) {
       const url = absoluteUrl(hit[2], base);
-      if (url && /^https?:/.test(url) && !/(?:\/order\/list|\/shop\/privilege|\/products\/?$)/i.test(new URL(url).pathname)) return url;
+      if (url && /^https?:/.test(url) && !/(?:\/order\/list|\/shop\/privilege|\/shop\/goto\//i.test(url)) return url;
     }
   }
   return null;
 }
 async function enrichOfficialMedia(event) {
   const out = { ...event };
-  if (out.productUrl && /(?:\/order\/list|\/shop\/privilege|\/products\/?$)/i.test(new URL(out.productUrl).pathname)) delete out.productUrl;
+  if (out.productUrl && /(?:\/order\/list|\/shop\/privilege)/i.test(new URL(out.productUrl).pathname)) delete out.productUrl;
+  if (out.brand === 'Apple' && out.productUrl && /\/shop\/goto\//i.test(out.productUrl)) delete out.productUrl;
+  if (out.brand === 'HONOR' && out.productUrl && /(?:\/shop\/https|\/shop\/privilege)/i.test(out.productUrl)) delete out.productUrl;
   const pages = [event.officialUrl, event.sourceUrl].filter(Boolean);
   const results = await Promise.all(pages.map(async page => {
     try { return { page, ...(await fetchOfficialHtml(page)) }; }
