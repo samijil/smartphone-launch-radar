@@ -27,9 +27,9 @@ Les données sont dans [`data/events.json`](data/events.json). Les candidats bru
 
 Les statuts sont `UPCOMING`, `LIVE`, `COMPLETED` et `TBC`. L’interface convertit automatiquement en **Terminé** un événement horodaté qui est passé. Une date TBC reste explicitement non confirmée.
 
-### Initialisation de septembre 2026
+### Initialisation et rattrapage du mois en cours
 
-L’initialisation ne publie aucun lancement pour septembre 2026 : aucune date officielle vérifiable n’a été trouvée dans le contexte de création. C’est intentionnel, plutôt que de publier une date spéculative. Le dashboard affiche cet état et le système est prêt à recevoir des annonces documentées.
+Le cycle ne se limite pas aux annonces découvertes après le lancement du workflow : il fusionne aussi les annonces officielles déjà connues du mois en cours et conserve les événements passés et à venir. Une date de publication reste distincte d’une date de lancement ou de disponibilité.
 
 ## Collecte officielle et automatisation
 
