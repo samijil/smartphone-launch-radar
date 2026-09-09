@@ -12,6 +12,68 @@ const month = new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Paris', year:
   .reduce((acc, part) => ({ ...acc, [part.type]: part.value }), {});
 const currentMonth = `${month.year}-${month.month}`;
 
+const FETCH_TIMEOUT_MS = 15000;
+async function fetchOfficialHtml(url) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
+  try {
+    const res = await fetch(url, { redirect: 'follow', signal: controller.signal, headers: { 'user-agent': 'smartphone-launch-radar/1.5 official-media-enricher', accept: 'text/html,application/xhtml+xml' } });
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    return { html: await res.text(), url: res.url };
+  } finally { clearTimeout(timer); }
+}
+function absoluteUrl(value, base) { try { return new URL(value, base).href; } catch { return null; } }
+function metaValue(html, key) {
+  const esc = key.replace(/[.*+?^$()|[\]\\]/g, '\\const data = JSON.parse(await readFile('data/events.json', 'utf8'));');
+  const patterns = [
+    new RegExp('<meta[^>]+(?:property|name|itemprop)=["\\']' + esc + '["\\'][^>]+content=["\\']([^"\\']+)["\\']', 'i'),
+    new RegExp('<meta[^>]+content=["\\']([^"\\']+)["\\'][^>]+(?:property|name|itemprop)=["\\']' + esc + '["\\']', 'i')
+  ];
+  for (const re of patterns) { const hit = html.match(re); if (hit) return hit[1].replace(/&amp;/g, '&'); }
+  return null;
+}
+function mediaLink(html, base) {
+  const video = metaValue(html, 'og:video') || metaValue(html, 'og:video:url');
+  if (video) return absoluteUrl(video, base);
+  const hit = html.match(/https?:\\/\\/(?:www\\.)?(?:youtube\\.com\\/watch\\?v=[^"'\\s<]+|youtu\\.be\\/[^"'\\s<]+)/i);
+  return hit ? hit[0] : null;
+}
+function storeLink(html, base) {
+  const re = /<a\\b([^>]+)href=["']([^"']+)["']([^>]*)>([\\s\\S]*?)<\\/a>/gi;
+  let hit;
+  while ((hit = re.exec(html))) {
+    const label = (hit[1] + ' ' + hit[3] + ' ' + hit[4]).replace(/<[^>]+>/g, ' ').replace(/\\s+/g, ' ');
+    if (/(buy|purchase|shop|order|pre-?order|réserver|acheter|commander|购买|预售|订金)/i.test(label)) {
+      const url = absoluteUrl(hit[2], base);
+      if (url && /^https?:/.test(url)) return url;
+    }
+  }
+  return null;
+}
+async function enrichOfficialMedia(event) {
+  const out = { ...event };
+  for (const page of [event.officialUrl, event.sourceUrl].filter(Boolean)) {
+    try {
+      const fetched = await fetchOfficialHtml(page);
+      if (!out.image) {
+        const image = metaValue(fetched.html, 'og:image') || metaValue(fetched.html, 'twitter:image') || metaValue(fetched.html, 'image');
+        if (image) out.image = absoluteUrl(image, fetched.url);
+      }
+      if (!out.streamUrl) {
+        const stream = mediaLink(fetched.html, fetched.url);
+        if (stream) out.streamUrl = stream;
+      }
+      if (!out.productUrl) {
+        const product = storeLink(fetched.html, fetched.url);
+        if (product) out.productUrl = product;
+      }
+    } catch (error) {
+      out.enrichmentErrors = [...(out.enrichmentErrors || []), { url: page, error: String(error.message || error) }];
+    }
+  }
+  return out;
+}
+
 const data = JSON.parse(await readFile('data/events.json', 'utf8'));
 
 async function readEvents(path) {
@@ -53,11 +115,9 @@ for (const item of valid) {
 
 data.month = currentMonth;
 data.updatedAt = now.toISOString();
-data.events = [...published.values()]
-  .filter(e => e.date.startsWith(currentMonth))
-  .sort((a, b) => new Date(a.date) - new Date(b.date));
+data.events = await Promise.all([...published.values()]\n  .filter(e => e.date.startsWith(currentMonth))\n  .sort((a, b) => new Date(a.date) - new Date(b.date))\n  .map(enrichOfficialMedia));
 
-data.sourcesNote = `Mise à jour automatisée du ${now.toISOString()}: événements passés et à venir du mois ${currentMonth}, publiés uniquement avec date ISO et URL officielle. Les candidats non confirmés restent exclus du radar.`;
+data.sourcesNote = `Mise à jour automatisée du ${now.toISOString()}: événements du mois enrichis depuis leurs pages officielles avec photos, diffusion/replay et liens d'achat ou précommande lorsqu'ils existent.`;
 
 await writeFile('data/events.json', `${JSON.stringify(data, null, 2)}\n`);
 await mkdir('reports', { recursive: true });
