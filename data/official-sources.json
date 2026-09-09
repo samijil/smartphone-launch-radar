@@ -14,7 +14,7 @@
     {
       "id": "samsung-global",
       "brand": "Samsung",
-      "url": "https://news.samsung.com/global/category/press-resources/press-release",
+      "url": "https://news.samsung.com/global/category/press-release",
       "allowedHosts": [
         "news.samsung.com"
       ],
@@ -52,4 +52,4 @@
       "language": "en"
     }
   ]
-}
+}\n
