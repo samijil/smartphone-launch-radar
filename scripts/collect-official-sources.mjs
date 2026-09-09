@@ -135,7 +135,7 @@ function mediaImageOf(html, base) {
 function mediaVideoOf(html, base) {
   const patterns = [
     /<meta[^>]+property=["']og:video(?::url)?["'][^>]+content=["']([^"']+)["']/i,
-    /https?:\\/\\/(?:www\\.)?(?:youtube\\.com\\/watch\\?v=[^"'\\s<]+|youtu\\.be\\/[^"'\\s<]+)/i
+    /https?:\/\/(?:www\.)?(?:youtube\.com\/watch\?v=[^"'\s<]+|youtu\.be\/[^"'\s<]+)/i
   ];
   for (const re of patterns) {
     const hit = html.match(re);
