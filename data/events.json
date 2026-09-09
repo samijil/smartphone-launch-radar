@@ -1,7 +1,97 @@
 {
   "$schema": "https://smartphone-launch-radar.local/schema/events-v1",
   "month": "2026-09",
-  "updatedAt": "2026-09-09T10:16:03.766Z",
-  "sourcesNote": "Mise à jour automatisée du 2026-09-09T10:16:03.766Z: seules les annonces disposant d'une URL officielle et d'une date ISO sont publiées automatiquement. Les résultats rapportés et non confirmés nécessitent une revue.",
-  "events": []
+  "updatedAt": "2026-09-09T10:36:53.752Z",
+  "sourcesNote": "Mise à jour automatisée du 2026-09-09T10:36:53.752Z: événements passés et à venir du mois 2026-09, publiés uniquement avec date ISO et URL officielle. Les candidats non confirmés restent exclus du radar.",
+  "events": [
+    {
+      "id": "poco-f9-series-2026-09-01",
+      "name": "POCO F9 Series Global Launch",
+      "brand": "POCO / Xiaomi",
+      "date": "2026-09-01T14:45:00+02:00",
+      "timezone": "Europe/Paris",
+      "region": "GLOBAL",
+      "status": "COMPLETED",
+      "confidence": "OFFICIAL",
+      "summary": "Lancement mondial officiel de la série POCO F9, comprenant notamment les POCO F9 Pro et POCO F9 Ultra.",
+      "specifications": {
+        "models": [
+          "POCO F9 Pro",
+          "POCO F9 Ultra"
+        ]
+      },
+      "officialUrl": "https://www.mi.com/global/launch/poco-f9-series-launch/",
+      "sourceUrl": "https://www.mi.com/fr/support/terms/poco-f9-series/",
+      "requiresReview": false
+    },
+    {
+      "id": "samsung-galaxy-s26-fe-2026-09-04",
+      "name": "Samsung Galaxy S26 FE — disponibilité",
+      "brand": "Samsung",
+      "date": "2026-09-04T00:00:00+02:00",
+      "timezone": "Europe/Paris",
+      "region": "FR",
+      "status": "COMPLETED",
+      "confidence": "OFFICIAL",
+      "summary": "Samsung annonce la disponibilité du Galaxy S26 FE à partir du 4 septembre 2026.",
+      "specifications": {
+        "model": "Galaxy S26 FE"
+      },
+      "officialUrl": "https://news.samsung.com/fr/galaxy-s26-fe",
+      "sourceUrl": "https://news.samsung.com/fr/galaxy-s26-fe",
+      "requiresReview": false
+    },
+    {
+      "id": "huawei-mate-xt-2-2026-09-07",
+      "name": "Huawei Mate XT 2 | ULTIMATE DESIGN — lancement",
+      "brand": "Huawei",
+      "date": "2026-09-07T14:30:00+08:00",
+      "timezone": "Asia/Shanghai",
+      "region": "CN",
+      "status": "COMPLETED",
+      "confidence": "OFFICIAL",
+      "summary": "Événement officiel HarmonyOS 7 et HUAWEI Mate XT 2, avec présentation du nouveau smartphone pliable en trois.",
+      "specifications": {
+        "model": "HUAWEI Mate XT 2 | ULTIMATE DESIGN"
+      },
+      "officialUrl": "https://consumer.huawei.com/cn/press/events/2026/harmonyos-7-and-huawei-mate-xt-2-and-all-scenario-new-product-launch-event/",
+      "sourceUrl": "https://consumer.huawei.com/cn/support/content/zh-cn16112373/",
+      "requiresReview": false
+    },
+    {
+      "id": "apple-special-event-2026-09-09",
+      "name": "Apple Special Event — Surprise and shine",
+      "brand": "Apple",
+      "date": "2026-09-09T10:00:00-07:00",
+      "timezone": "America/Los_Angeles",
+      "region": "GLOBAL",
+      "status": "UPCOMING",
+      "confidence": "OFFICIAL",
+      "summary": "Événement spécial Apple officiel, annoncé pour le 9 septembre à 10 h PT, avec diffusion sur Apple.com, Apple TV et YouTube Live.",
+      "specifications": {},
+      "officialUrl": "https://www.apple.com/fr/apple-events/",
+      "streamUrl": "https://www.apple.com/fr/apple-events/",
+      "sourceUrl": "https://developer.apple.com/news/?id=s6spdug0",
+      "requiresReview": false
+    },
+    {
+      "id": "honor-magic9-series-2026-09-28",
+      "name": "HONOR Magic9 Series Launch Event",
+      "brand": "HONOR",
+      "date": "2026-09-28T00:00:00+08:00",
+      "timezone": "Asia/Shanghai",
+      "region": "CN",
+      "status": "UPCOMING",
+      "confidence": "OFFICIAL",
+      "summary": "La communauté officielle HONOR annonce un événement de lancement de la série Magic9 à Pékin le 28 septembre 2026.",
+      "specifications": {
+        "models": [
+          "HONOR Magic9 Series"
+        ]
+      },
+      "officialUrl": "https://club.honor.com/cn/thread-30392255-1-1.html",
+      "sourceUrl": "https://www.honor.com/cn/shop/notice-18130",
+      "requiresReview": false
+    }
+  ]
 }

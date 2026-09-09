@@ -1,7 +1,92 @@
 {
-  "generatedAt": "2026-09-09T10:16:03.729Z",
-  "sourceCount": 5,
+  "generatedAt": "2026-09-09T10:36:53.698Z",
+  "sourceCount": 15,
   "events": [
+    {
+      "id": "nothing-news-inexpensive-phone-3-cases",
+      "name": "Inexpensive Phone (3) cases?",
+      "brand": "Nothing",
+      "date": null,
+      "timezone": "UTC",
+      "region": "GLOBAL",
+      "status": "TBC",
+      "confidence": "OFFICIAL",
+      "summary": "Inexpensive Phone (3) cases? Loading... This site is best viewed in a modern browser with JavaScript enabled. Something went wrong while trying to load the full version of this site. Try hard-refreshing this page to fix the error. Inexpensive Phone (3) cases? DancingZebra Hey, any suggestions for a good, not too expensive back case for the Nothing Phone 3? I like Spigen Case Zero but it is expensive for a back cover Daniel DancingZebra Try from JETech UpawNothing DancingZebra I have quite a lot of covers this was the best cheap one I found: - https://amzn.eu/d/0gC8SU92 I needed a magsafe case ",
+      "specifications": {},
+      "image": "",
+      "officialUrl": "https://nothing.community/d/62553-inexpensive-phone-3-cases",
+      "sourceUrl": "https://nothing.community/",
+      "collectedAt": "2026-09-09T10:36:52.842Z",
+      "requiresReview": true
+    },
+    {
+      "id": "nothing-news-nothing-phone-5a-pro-final-concept-design",
+      "name": "Nothing phone 5a pro final concept design",
+      "brand": "Nothing",
+      "date": null,
+      "timezone": "UTC",
+      "region": "GLOBAL",
+      "status": "TBC",
+      "confidence": "OFFICIAL",
+      "summary": "Nothing phone 5a pro final concept design Loading... This site is best viewed in a modern browser with JavaScript enabled. Something went wrong while trying to load the full version of this site. Try hard-refreshing this page to fix the error. Nothing phone 5a pro final concept design Rakeshchakma Here is my final design for nothing phone 5a pro that is yet to come by March 04,2027,but I believe community is eagerly waiting for its design to be revealed,but this concept will explained in detailed,from inspiration to final design choice,and the product will be made with AI to replicate it’s 2d ",
+      "specifications": {},
+      "image": "",
+      "officialUrl": "https://nothing.community/d/62573-nothing-phone-5a-pro-final-concept-design",
+      "sourceUrl": "https://nothing.community/",
+      "collectedAt": "2026-09-09T10:36:52.749Z",
+      "requiresReview": true
+    },
+    {
+      "id": "vivo-global-2024-european-cup-unveils-spectacular-opening-vivo-v30-series-as-the-official-smartphone-for-cap",
+      "name": "2024 European Cup™ Unveils Spectacular Opening: vivo V30 Series as the Official Smartphone for Capturing the Excitement and Unforgettable Highlights | vivo Global",
+      "brand": "vivo",
+      "date": null,
+      "timezone": "UTC",
+      "region": "GLOBAL",
+      "status": "TBC",
+      "confidence": "OFFICIAL",
+      "summary": "2024 European Cup™ Unveils Spectacular Opening: vivo V30 Series as the Official Smartphone for Capturing the Excitement and Unforgettable Highlights | vivo Global Home Products Retail Stores Support OriginOS Explore vivo X300 Ultra new X300 Pro new vivo Buds Pro new X200 FE new X200 Pro new V70 new Y200 5G All Models Compare Models Home Products X300 Ultra new X300 Pro new vivo Buds Pro new X200 FE new X200 Pro new V70 new Y200 5G All Models Compare Models Retail Stores Support OriginOS Explore vivo Global | Select country/region 2024 European Cup™ Unveils Spectacular Opening: vivo V30 Series ",
+      "specifications": {},
+      "image": "",
+      "officialUrl": "https://www.vivo.com/en/about-vivo/news/european-cup-opening",
+      "sourceUrl": "https://www.vivo.com/en/news/",
+      "collectedAt": "2026-09-09T10:36:48.195Z",
+      "requiresReview": true
+    },
+    {
+      "id": "honor-cn-news-robot-phone",
+      "name": "引领智能手机迈入具身交互时代 首款机器人手机荣耀Robot Phone正式发布 | 荣耀官方网站",
+      "brand": "HONOR",
+      "date": null,
+      "timezone": "UTC",
+      "region": "GLOBAL",
+      "status": "TBC",
+      "confidence": "OFFICIAL",
+      "summary": "引领智能手机迈入具身交互时代 首款机器人手机荣耀Robot Phone正式发布 | 荣耀官方网站 Skip to main content Skip to About Honor TOP 国补 手机 最新产品 荣耀Robot Phone系列 荣耀Magic系列 荣耀数字系列 荣耀WIN系列 荣耀Power系列 荣耀X系列 荣耀Play系列 荣耀畅玩系列 New 荣耀Robot Phone New 荣耀600 Pro New 荣耀600 超级版 New 荣耀600 元气版 New 荣耀Play11T 更多产品 产品对比 New 荣耀Robot Phone 更多产品 产品对比 New 荣耀Magic V6 New 荣耀Magic8 Pro Air New 荣耀Magic8 RSR | 保时捷设计 New 荣耀Magic V Flip2 New 荣耀Magic8 Pro 更多产品 产品对比 New 荣耀600 Pro New 荣耀600 超级版 New 荣耀600 元气版 New 荣耀500 Pro MOLLY 20周年限定版 New 荣耀500 Pro 更多产品 产品对比 New 荣耀WIN Turbo New 荣耀WIN RT New 荣耀WIN 更多产品 产品对比 New 荣耀Power2 New 荣耀Power 更多产品 产品对比 New 荣耀X80 Pro Max New 荣耀",
+      "specifications": {},
+      "image": "",
+      "officialUrl": "https://www.honor.com/cn/news/honor-robot-phone-launch/",
+      "sourceUrl": "https://www.honor.com/cn/news/",
+      "collectedAt": "2026-09-09T10:36:44.324Z",
+      "requiresReview": true
+    },
+    {
+      "id": "huawei-cn-events-huawei-matebook-fold",
+      "name": "HUAWEI MateBook Fold 非凡大师",
+      "brand": "Huawei",
+      "date": null,
+      "timezone": "UTC",
+      "region": "GLOBAL",
+      "status": "TBC",
+      "confidence": "OFFICIAL",
+      "summary": "HUAWEI MateBook Fold 非凡大师 - 华为官网 HUAWEI MateBook Fold 非凡大师 我们使用cookie来确保您的高速浏览体验。继续浏览本站，即表示您同意我们使用cookie。 详情 消费者业务网站 关闭 个人用户 手机，PC和平板，穿戴设备等个人及家用产品 集团网站 公司信息，社会责任，新闻，展会活动，行业洞察等等 企业用户 企业商用产品、解决方案和云服务 运营商用户 运营商网络解决方案、产品及服务 手机 穿戴 电脑 平板 智慧屏 耳机音箱 全屋智能 路由器 HarmonyOS 7 服务支持 零售店 商用 华为商城 \" target=\"_blank\" rel=\"noopener noreferrer\"> 华为商城 商城 搜索 简介 ' href=\"javascript:void(0)\" data-title=\"登录\"> 登录 ' href=\"javascript:void(0)\" data-title=\"注册\"> 注册 ' href=\"/cn/support/user-center.html?type=service\" data-title=\"我的服务\" ha-id=\"me_click_my_service\"> 我的服务 ' href=\"/cn/support/user-center.html?type=userinfo\" data-title=",
+      "specifications": {},
+      "image": "",
+      "officialUrl": "https://consumer.huawei.com/cn/harmonyos-computer/matebook-fold-ultimate-design/",
+      "sourceUrl": "https://consumer.huawei.com/cn/press/events/",
+      "collectedAt": "2026-09-09T10:36:42.649Z",
+      "requiresReview": true
+    },
     {
       "id": "apple-iphone-apple-presente-l-iphone-17e",
       "name": "Apple présente l’iPhone 17e",
@@ -16,7 +101,7 @@
       "image": "",
       "officialUrl": "https://www.apple.com/fr/newsroom/2026/03/apple-introduces-iphone-17e/",
       "sourceUrl": "https://www.apple.com/fr/newsroom/topics/iphone/",
-      "collectedAt": "2026-09-09T10:15:47.749Z",
+      "collectedAt": "2026-09-09T10:36:25.114Z",
       "requiresReview": true
     }
   ],
@@ -25,6 +110,21 @@
       "source": "samsung-global",
       "url": "https://news.samsung.com/global/samsung-galaxy-z-fold8-ultra-fold8-and-flip8foldables-perfected-for-every-way-of-living",
       "error": "Request timed out after 15000ms"
+    },
+    {
+      "source": "motorola-news",
+      "url": "https://news.motorola.com/",
+      "error": "fetch failed"
+    },
+    {
+      "source": "realme-global",
+      "url": "https://www.realme.com/global/newsroom/",
+      "error": "HTTP 403"
+    },
+    {
+      "source": "sony-xperia",
+      "url": "https://www.sony.com/electronics/mobile",
+      "error": "HTTP 403"
     }
   ]
 }
