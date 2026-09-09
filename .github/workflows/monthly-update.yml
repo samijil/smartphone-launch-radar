@@ -1,9 +1,14 @@
-name: Official source collection and launch-data update
+name: Global source collection and launch-data update
 
 on:
   schedule:
     - cron: '15 5 * * *'
   workflow_dispatch:
+    inputs:
+      reason:
+        description: 'Optional reason for the manual refresh'
+        required: false
+        type: string
   push:
     branches: [main]
     paths:

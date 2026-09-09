@@ -9,7 +9,8 @@
         "apple.com",
         "www.apple.com"
       ],
-      "language": "fr"
+      "language": "fr",
+      "role": "official"
     },
     {
       "id": "samsung-global",
@@ -18,7 +19,8 @@
       "allowedHosts": [
         "news.samsung.com"
       ],
-      "language": "en"
+      "language": "en",
+      "role": "official"
     },
     {
       "id": "oppo-global",
@@ -28,7 +30,8 @@
         "oppo.com",
         "www.oppo.com"
       ],
-      "language": "en"
+      "language": "en",
+      "role": "official"
     },
     {
       "id": "google-pixel",
@@ -38,7 +41,8 @@
         "blog.google",
         "store.google.com"
       ],
-      "language": "en"
+      "language": "en",
+      "role": "official"
     },
     {
       "id": "xiaomi-rss",
@@ -49,7 +53,8 @@
         "gcs-web.com",
         "xiaomi.gcs-web.com"
       ],
-      "language": "en"
+      "language": "en",
+      "role": "official"
     },
     {
       "id": "huawei-cn-events",
@@ -58,7 +63,8 @@
       "allowedHosts": [
         "consumer.huawei.com"
       ],
-      "language": "zh"
+      "language": "zh",
+      "role": "official"
     },
     {
       "id": "honor-cn-news",
@@ -69,7 +75,8 @@
         "www.honor.com",
         "club.honor.com"
       ],
-      "language": "zh"
+      "language": "zh",
+      "role": "official"
     },
     {
       "id": "motorola-news",
@@ -79,7 +86,8 @@
         "motorola.com",
         "news.motorola.com"
       ],
-      "language": "en"
+      "language": "en",
+      "role": "official"
     },
     {
       "id": "vivo-global",
@@ -89,7 +97,8 @@
         "vivo.com",
         "www.vivo.com"
       ],
-      "language": "en"
+      "language": "en",
+      "role": "official"
     },
     {
       "id": "oneplus-global",
@@ -99,7 +108,8 @@
         "oneplus.com",
         "www.oneplus.com"
       ],
-      "language": "en"
+      "language": "en",
+      "role": "official"
     },
     {
       "id": "realme-global",
@@ -109,7 +119,8 @@
         "realme.com",
         "www.realme.com"
       ],
-      "language": "en"
+      "language": "en",
+      "role": "official"
     },
     {
       "id": "sony-xperia",
@@ -119,7 +130,8 @@
         "sony.com",
         "www.sony.com"
       ],
-      "language": "en"
+      "language": "en",
+      "role": "official"
     },
     {
       "id": "asus-news",
@@ -130,7 +142,8 @@
         "www.asus.com",
         "press.asus.com"
       ],
-      "language": "en"
+      "language": "en",
+      "role": "official"
     },
     {
       "id": "nothing-news",
@@ -141,7 +154,8 @@
         "nothing.tech",
         "www.nothing.tech"
       ],
-      "language": "en"
+      "language": "en",
+      "role": "official"
     },
     {
       "id": "nubia-global",
@@ -151,7 +165,188 @@
         "nubia.com",
         "www.nubia.com"
       ],
-      "language": "en"
+      "language": "en",
+      "role": "official"
+    },
+    {
+      "id": "industry-gsmarena",
+      "brand": "GSMArena",
+      "url": "https://www.gsmarena.com/",
+      "allowedHosts": [
+        "gsmarena.com",
+        "www.gsmarena.com"
+      ],
+      "language": "en",
+      "role": "industry",
+      "name": "GSMArena"
+    },
+    {
+      "id": "industry-android-authority",
+      "brand": "Android Authority",
+      "url": "https://www.androidauthority.com/",
+      "allowedHosts": [
+        "androidauthority.com",
+        "www.androidauthority.com"
+      ],
+      "language": "en",
+      "role": "industry",
+      "name": "Android Authority"
+    },
+    {
+      "id": "industry-android-central",
+      "brand": "Android Central",
+      "url": "https://www.androidcentral.com/",
+      "allowedHosts": [
+        "androidcentral.com",
+        "www.androidcentral.com"
+      ],
+      "language": "en",
+      "role": "industry",
+      "name": "Android Central"
+    },
+    {
+      "id": "industry-phonearena",
+      "brand": "PhoneArena",
+      "url": "https://www.phonearena.com/",
+      "allowedHosts": [
+        "phonearena.com",
+        "www.phonearena.com"
+      ],
+      "language": "en",
+      "role": "industry",
+      "name": "PhoneArena"
+    },
+    {
+      "id": "industry-notebookcheck",
+      "brand": "Notebookcheck",
+      "url": "https://www.notebookcheck.net/",
+      "allowedHosts": [
+        "notebookcheck.net",
+        "www.notebookcheck.net"
+      ],
+      "language": "en",
+      "role": "industry",
+      "name": "Notebookcheck"
+    },
+    {
+      "id": "industry-the-verge",
+      "brand": "The Verge",
+      "url": "https://www.theverge.com/",
+      "allowedHosts": [
+        "theverge.com",
+        "www.theverge.com"
+      ],
+      "language": "en",
+      "role": "industry",
+      "name": "The Verge"
+    },
+    {
+      "id": "industry-techradar",
+      "brand": "TechRadar",
+      "url": "https://www.techradar.com/phones",
+      "allowedHosts": [
+        "techradar.com",
+        "www.techradar.com"
+      ],
+      "language": "en",
+      "role": "industry",
+      "name": "TechRadar"
+    },
+    {
+      "id": "industry-tomsguide",
+      "brand": "Tom's Guide",
+      "url": "https://www.tomsguide.com/phones",
+      "allowedHosts": [
+        "tomsguide.com",
+        "www.tomsguide.com"
+      ],
+      "language": "en",
+      "role": "industry",
+      "name": "Tom's Guide"
+    },
+    {
+      "id": "industry-xda",
+      "brand": "XDA Developers",
+      "url": "https://www.xda-developers.com/",
+      "allowedHosts": [
+        "xda-developers.com",
+        "www.xda-developers.com"
+      ],
+      "language": "en",
+      "role": "industry",
+      "name": "XDA Developers"
+    },
+    {
+      "id": "industry-gizmochina",
+      "brand": "Gizmochina",
+      "url": "https://www.gizmochina.com/",
+      "allowedHosts": [
+        "gizmochina.com",
+        "www.gizmochina.com"
+      ],
+      "language": "en",
+      "role": "industry",
+      "name": "Gizmochina"
+    },
+    {
+      "id": "industry-91mobiles",
+      "brand": "91mobiles",
+      "url": "https://www.91mobiles.com/hub/",
+      "allowedHosts": [
+        "91mobiles.com",
+        "www.91mobiles.com"
+      ],
+      "language": "en",
+      "role": "industry",
+      "name": "91mobiles"
+    },
+    {
+      "id": "industry-frandroid",
+      "brand": "Frandroid",
+      "url": "https://www.frandroid.com/produits-android/smartphone",
+      "allowedHosts": [
+        "frandroid.com",
+        "www.frandroid.com"
+      ],
+      "language": "en",
+      "role": "industry",
+      "name": "Frandroid"
+    },
+    {
+      "id": "industry-les-numeriques",
+      "brand": "Les Numériques",
+      "url": "https://www.lesnumeriques.com/telephone-portable/",
+      "allowedHosts": [
+        "lesnumeriques.com",
+        "www.lesnumeriques.com"
+      ],
+      "language": "en",
+      "role": "industry",
+      "name": "Les Numériques"
+    },
+    {
+      "id": "industry-digital-trends",
+      "brand": "Digital Trends",
+      "url": "https://www.digitaltrends.com/mobile/",
+      "allowedHosts": [
+        "digitaltrends.com",
+        "www.digitaltrends.com"
+      ],
+      "language": "en",
+      "role": "industry",
+      "name": "Digital Trends"
+    },
+    {
+      "id": "industry-t3",
+      "brand": "T3",
+      "url": "https://www.t3.com/tech",
+      "allowedHosts": [
+        "t3.com",
+        "www.t3.com"
+      ],
+      "language": "en",
+      "role": "industry",
+      "name": "T3"
     }
   ]
 }
