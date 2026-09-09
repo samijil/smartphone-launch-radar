@@ -75,6 +75,7 @@ function storeLink(html, base) {
 }
 async function enrichOfficialMedia(event) {
   const out = { ...event };
+  if (out.productUrl && /(?:\/order\/list|\/shop\/privilege|\/products\/?$)/i.test(new URL(out.productUrl).pathname)) delete out.productUrl;
   const pages = [event.officialUrl, event.sourceUrl].filter(Boolean);
   const results = await Promise.all(pages.map(async page => {
     try { return { page, ...(await fetchOfficialHtml(page)) }; }
