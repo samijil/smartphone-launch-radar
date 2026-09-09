@@ -35,7 +35,7 @@ function metaValue(html, key) {
 function mediaLink(html, base) {
   const video = metaValue(html, 'og:video') || metaValue(html, 'og:video:url');
   if (video) return absoluteUrl(video, base);
-  const hit = html.match(/https?:\\/\\/(?:www\\.)?(?:youtube\\.com\\/watch\\?v=[^"'\\s<]+|youtu\\.be\\/[^"'\\s<]+)/i);
+  const hit = html.match(/https?:\/\/(?:www\.)?(?:youtube\.com\/watch\?v=[^"'\s<]+|youtu\.be\/[^"'\s<]+)/i);
   return hit ? hit[0] : null;
 }
 function storeLink(html, base) {
