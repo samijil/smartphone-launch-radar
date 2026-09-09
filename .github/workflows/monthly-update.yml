@@ -18,7 +18,7 @@ permissions:
 
 concurrency:
   group: official-source-update
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   update:
