@@ -101,6 +101,8 @@ async function enrichOfficialMedia(event) {
       if (product) out.productUrl = product;
     }
   }
+  if (out.brand === 'Apple') delete out.productUrl;
+  if (out.brand === 'HONOR' && out.productUrl && /(?:&#x|\/shop\/https|\/shop\/privilege)/i.test(out.productUrl)) delete out.productUrl;
   if (!out.image && out.officialUrl) {
     out.image = 'https://image.thum.io/get/width/1200/crop/675/noanimate/' + encodeURIComponent(out.officialUrl);
     out.imageFallback = 'official-page-snapshot';
