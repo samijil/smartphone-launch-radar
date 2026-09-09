@@ -49,7 +49,11 @@ function pageImage(html, base, hint = '') {
     const text = ((tag.match(/(?:alt|title)=["']([^"']*)["']/i) || [])[1] || '').toLowerCase();
     if (words.some(w => text.includes(w))) return url;
   }
-  return fallback;
+  if (fallback) return fallback;
+  const urls = html.match(/https?:[^"'\\s<>]+\\.(?:avif|webp|png|jpe?g)(?:\\?[^"'\\s<>]*)?/gi) || [];
+  const normalizedHint = hint.toLowerCase().replace(/[^a-z0-9]+/g, '');
+  const preferred = urls.find(u => u.toLowerCase().replace(/[^a-z0-9]+/g, '').includes(normalizedHint.slice(0, 8)));
+  return preferred || urls[0] || null;
 }
 function mediaLink(html, base) {
   const video = metaValue(html, 'og:video') || metaValue(html, 'og:video:url');
