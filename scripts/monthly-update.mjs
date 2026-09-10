@@ -166,7 +166,27 @@ for (const event of [...published.values()].filter(e => e.date.startsWith(curren
     if (score > priorScore) uniqueByOfficialUrl.set(key, event);
   }
 }
-data.events = await Promise.all([...uniqueByOfficialUrl.values()].map(enrichOfficialMedia));
+const enrichedEvents = await Promise.all([...uniqueByOfficialUrl.values()].map(enrichOfficialMedia));
+function smartphoneKey(event) {
+  return (String(event.brand || '') + '-' + String(event.name || '')).toLowerCase()
+    .replace(/\b(launch|launched|launches|launching|announcement|announced|teaser|teased|reveal|revealed|event|keynote|availability|available|pre[- ]?order|preorder|pricing|price|sale|unveiling|unveiled)\b/g, ' ')
+    .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g,'');
+}
+const grouped = new Map();
+for (const event of enrichedEvents) {
+  const key = smartphoneKey(event) || event.id;
+  const group = grouped.get(key);
+  if (!group) { grouped.set(key, { ...event, announcements: [{ ...event }], groupKey: key }); continue; }
+  group.announcements.push({ ...event });
+  if (new Date(event.date) < new Date(group.date)) {
+    const list = group.announcements; Object.assign(group, event); group.announcements = list; group.groupKey = key;
+  }
+  group.confidence = group.announcements.some(x => x.confidence === 'OFFICIAL') ? 'OFFICIAL' : 'REPORTED';
+  group.image = group.image || event.image;
+  group.specifications = { ...(group.specifications || {}), ...(event.specifications || {}) };
+}
+for (const group of grouped.values()) { group.announcements.sort((a,b)=>new Date(a.date)-new Date(b.date)); group.announcementCount=group.announcements.length; }
+data.events = [...grouped.values()].sort((a,b)=>new Date(a.date)-new Date(b.date));
 
 const officialCount = data.events.filter(e => e.confidence === 'OFFICIAL').length;
 const reportedCount = data.events.filter(e => e.confidence === 'REPORTED').length;
