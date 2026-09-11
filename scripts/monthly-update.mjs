@@ -143,8 +143,17 @@ const valid = [...byId.values()].filter(e => {
 });
 
 const published = new Map();
+// Keep only previously published OFFICIAL records as a resilience backstop.
+// REPORTED records must be rediscovered by the current collection cycle; this
+// prevents stale review/category pages from surviving indefinitely.
 for (const event of data.events || []) {
-  if (typeof event.date === 'string' && event.date.startsWith(currentMonth)) published.set(event.id, event);
+  if (typeof event.date === 'string'
+    && event.date.startsWith(currentMonth)
+    && event.confidence === 'OFFICIAL'
+    && typeof event.officialUrl === 'string'
+    && event.officialUrl.length > 0) {
+    published.set(event.id, event);
+  }
 }
 for (const item of valid) {
   const prior = published.get(item.id);
