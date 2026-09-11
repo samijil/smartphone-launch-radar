@@ -167,25 +167,104 @@ for (const event of [...published.values()].filter(e => e.date.startsWith(curren
   }
 }
 const enrichedEvents = await Promise.all([...uniqueByOfficialUrl.values()].map(enrichOfficialMedia));
-function smartphoneKey(event) {
-  return (String(event.brand || '') + '-' + String(event.name || '')).toLowerCase()
-    .replace(/\b(launch|launched|launches|launching|announcement|announced|teaser|teased|reveal|revealed|event|keynote|availability|available|pre[- ]?order|preorder|pricing|price|sale|unveiling|unveiled)\b/g, ' ')
-    .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g,'');
+function normalizeModel(value) {
+  return String(value || '')
+    .replace(/&(?:#39|apos);/gi, "'")
+    .replace(/&amp;/gi, '&')
+    .replace(/\s+/g, ' ')
+    .trim();
 }
+
+function modelMatch(text) {
+  const value = normalizeModel(text);
+  const patterns = [
+    [/\b(?:Apple\s+)?iPhone\s+(?:Duo|Ultra|Air(?:\s+\d+)?|\d{1,2}(?:\s+(?:Pro(?:\s+Max)?|Plus|Mini|Ultra|Air))?)\b/i, 'Apple'],
+    [/\b(?:Samsung\s+)?Galaxy\s+(?:Z\s+)?(?:Fold|Flip)\s*\d+(?:\s+(?:Ultra|FE|Pro))?\b/i, 'Samsung'],
+    [/\b(?:Samsung\s+)?Galaxy\s+S\d{1,2}(?:\s+(?:Ultra|Plus|FE|Edge))?\b/i, 'Samsung'],
+    [/\bXiaomi\s+\d{1,2}(?:\s+(?:Fold|Ultra|Pro(?:\s+Max)?|T(?:\s+Pro)?|Lite))?\b/i, 'Xiaomi'],
+    [/\bRedmi\s+(?:Note\s+)?\d{1,2}(?:\s+(?:Pro(?:\s+Max)?|Ultra|Plus))?\b/i, 'Xiaomi'],
+    [/\bPOCO\s+[A-Z]?\d{1,2}(?:\s+(?:Pro|Ultra|Plus|GT))?\b/i, 'Xiaomi'],
+    [/\bHuawei\s+(?:Mate\s+[A-Za-z0-9]+(?:\s+[A-Za-z0-9]+)?|Pura\s+[A-Za-z0-9]+(?:\s+[A-Za-z0-9]+)?)\b/i, 'Huawei'],
+    [/\b(?:HONOR|Honor)\s+(?:Magic\s+\d+(?:\s+(?:Pro|Lite|Ultra))?|Magic\s*V\d+(?:\s+(?:Pro|Ultimate))?)\b/i, 'HONOR'],
+    [/\bOPPO\s+(?:Find\s+[A-Za-z0-9]+(?:\s+(?:Pro|Ultra))?|Reno\s+\d+(?:\s+(?:Pro|F))?)\b/i, 'OPPO'],
+    [/\bOnePlus\s+\d+(?:[A-Z])?(?:\s+(?:Pro|R|T))?\b/i, 'OnePlus'],
+    [/\b(?:vivo|Vivo)\s+[A-Z]\d+(?:\s+(?:Pro(?:\s+Max)?|Ultra|e))?\b/i, 'vivo'],
+    [/\biQOO\s+\d+(?:\s+(?:Pro|Ultra|Neo))?\b/i, 'iQOO'],
+    [/\bNothing\s+Phone\s*\(\d+\)(?:\s+[A-Za-z0-9]+)?\b/i, 'Nothing'],
+    [/\bMotorola\s+(?:Razr|Edge)\s+[A-Za-z0-9]+(?:\s+[A-Za-z0-9]+)?\b/i, 'Motorola'],
+    [/\bGoogle\s+Pixel\s+\d+(?:\s+(?:Pro(?:\s+XL)?|Fold|a))?\b/i, 'Google'],
+    [/\bSony\s+Xperia\s+[A-Za-z0-9]+(?:\s+[A-Za-z0-9]+)?\b/i, 'Sony'],
+    [/\b(?:realme|Realme)\s+(?:GT\s+\d+(?:\s+(?:Pro|Ultra))?|\d+\s+Pro(?:\s+Plus)?)\b/i, 'realme'],
+    [/\bInfinix\s+[A-Za-z]+\s+\d+(?:\s+(?:Pro|Plus|Ultra))?(?:\s+5G)?\b/i, 'Infinix']
+  ];
+  for (const [pattern, brand] of patterns) {
+    const hit = value.match(pattern);
+    if (hit) {
+      const label = normalizeModel(hit[0]).replace(/^Apple\s+/i, '').replace(/^Samsung\s+/i, 'Galaxy ').replace(/^HONOR\b/i, 'HONOR');
+      return { brand, label, key: label.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '') };
+    }
+  }
+  return null;
+}
+
+function deviceIdentity(event) {
+  const fromTitle = modelMatch(event.name);
+  if (fromTitle) return fromTitle;
+  const fromSummary = modelMatch(String(event.summary || '').slice(0, 2500));
+  if (fromSummary) return fromSummary;
+  const fallback = normalizeModel(event.name).toLowerCase()
+    .replace(/\b(launch|launched|launches|launching|announcement|announced|teaser|teased|reveal|revealed|event|keynote|availability|available|pre[- ]?order|preorder|pricing|price|sale|unveiling|unveiled|review|hands-on|impressions|specifications|full phone specifications)\b/g, ' ')
+    .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+  return { brand: event.brand, label: normalizeModel(event.name), key: fallback || event.id };
+}
+
 const grouped = new Map();
 for (const event of enrichedEvents) {
-  const key = smartphoneKey(event) || event.id;
+  const identity = deviceIdentity(event);
+  const key = identity.key || event.id;
+  const normalized = {
+    ...event,
+    brand: identity.brand || event.brand,
+    deviceModel: identity.label || event.name,
+    groupKey: key
+  };
   const group = grouped.get(key);
-  if (!group) { grouped.set(key, { ...event, announcements: [{ ...event }], groupKey: key }); continue; }
-  group.announcements.push({ ...event });
-  if (new Date(event.date) < new Date(group.date)) {
-    const list = group.announcements; Object.assign(group, event); group.announcements = list; group.groupKey = key;
+  if (!group) {
+    grouped.set(key, {
+      ...normalized,
+      name: normalized.deviceModel,
+      announcements: [{ ...event, brand: normalized.brand, deviceModel: normalized.deviceModel }],
+      groupKey: key
+    });
+    continue;
+  }
+
+  group.announcements.push({ ...event, brand: normalized.brand, deviceModel: normalized.deviceModel });
+  const groupPriority = (group.confidence === 'OFFICIAL' ? 10 : 0) + (group.image ? 2 : 0) + Object.keys(group.specifications || {}).length;
+  const eventPriority = (event.confidence === 'OFFICIAL' ? 10 : 0) + (event.image ? 2 : 0) + Object.keys(event.specifications || {}).length;
+  if (eventPriority > groupPriority || (new Date(event.date) < new Date(group.date) && event.confidence === group.confidence)) {
+    const announcements = group.announcements;
+    Object.assign(group, normalized);
+    group.name = normalized.deviceModel;
+    group.announcements = announcements;
+    group.groupKey = key;
   }
   group.confidence = group.announcements.some(x => x.confidence === 'OFFICIAL') ? 'OFFICIAL' : 'REPORTED';
   group.image = group.image || event.image;
+  group.streamUrl = group.streamUrl || event.streamUrl;
+  group.productUrl = group.productUrl || event.productUrl;
+  group.officialUrl = group.confidence === 'OFFICIAL' ? (group.officialUrl || event.officialUrl) : group.officialUrl;
+  group.sourceUrl = group.sourceUrl || event.sourceUrl;
   group.specifications = { ...(group.specifications || {}), ...(event.specifications || {}) };
 }
-for (const group of grouped.values()) { group.announcements.sort((a,b)=>new Date(a.date)-new Date(b.date)); group.announcementCount=group.announcements.length; }
+for (const group of grouped.values()) {
+  group.announcements.sort((a,b)=>new Date(a.date)-new Date(b.date));
+  group.announcementCount = group.announcements.length;
+  if (group.announcements.length > 1) {
+    const bestImage = group.announcements.find(x => x.image)?.image;
+    if (bestImage) group.image = bestImage;
+  }
+}
 data.events = [...grouped.values()].sort((a,b)=>new Date(a.date)-new Date(b.date));
 
 const officialCount = data.events.filter(e => e.confidence === 'OFFICIAL').length;
