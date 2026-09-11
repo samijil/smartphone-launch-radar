@@ -12,7 +12,7 @@ const FETCH_TIMEOUT_MS = 15_000;
 const PHONE_RE = /\b(phone|smartphone|iphone|galaxy\s+[szaf]|pixel\s*\d|pixel phone|fold|flip|find\s*[nxr]|reno\s*\d|xiaomi\s*\d|redmi|poco|razr|motorola edge|oneplus|honor magic|vivo\s*[xy]|nubia|nothing phone|magic\s*\d|mate\s*\w+|pura\s*\w+)\b/i;
 const EXCLUDE_RE = /\b(watch|buds|earbuds|tablet|pad|laptop|macbook|book|tv|monitor|washer|dryer|ssd|microwave|range|refrigerator)\b/i;
 const GENERIC_TITLE_RE = /^(iphone news|.*newsroom|.*smartphones?\s*\|.*|view all phones?|phone reviews|.*coverage\s*\|.*|.*tag\s*\|.*)$/i;
-const NON_LAUNCH_TITLE_RE = /\b(review|reviews|hands-on|impressions|comparison|compares|versus|vs\.?|camera|accessories|coverage|guide|explained|why|how to)\b/i;
+const NON_LAUNCH_TITLE_RE = /\b(review|reviews|hands-on|impressions|comparison|compares|versus|vs\.?|camera|accessories|coverage|guide|explained|why|how to|repair spare part|top\s+\d+\s+upcoming\s+smartphone\s+launches)\b/i;
 const NON_HTML_PATH_RE = /\.(?:pdf|zip|rar|7z|docx?|xlsx?|pptx?|mp4|webm|mp3)(?:$|[?#])/i;
 
 function clean(html = '') {
