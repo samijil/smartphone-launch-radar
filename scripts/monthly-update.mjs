@@ -200,7 +200,7 @@ function modelMatch(text) {
   for (const [pattern, brand] of patterns) {
     const hit = value.match(pattern);
     if (hit) {
-      const label = normalizeModel(hit[0]).replace(/^Apple\s+/i, '').replace(/^Samsung\s+/i, 'Galaxy ').replace(/^HONOR\b/i, 'HONOR');
+      const label = normalizeModel(hit[0]).replace(/^Apple\s+/i, '').replace(/^Samsung\s+/i, '').replace(/^HONOR\b/i, 'HONOR');
       return { brand, label, key: label.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '') };
     }
   }
