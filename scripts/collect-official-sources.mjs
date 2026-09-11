@@ -11,7 +11,8 @@ const MAX_ARTICLES_PER_SOURCE = 30;
 const FETCH_TIMEOUT_MS = 15_000;
 const PHONE_RE = /\b(phone|smartphone|iphone|galaxy\s+[szaf]|pixel\s*\d|pixel phone|fold|flip|find\s*[nxr]|reno\s*\d|xiaomi\s*\d|redmi|poco|razr|motorola edge|oneplus|honor magic|vivo\s*[xy]|nubia|nothing phone|magic\s*\d|mate\s*\w+|pura\s*\w+)\b/i;
 const EXCLUDE_RE = /\b(watch|buds|earbuds|tablet|pad|laptop|macbook|book|tv|monitor|washer|dryer|ssd|microwave|range|refrigerator)\b/i;
-const GENERIC_TITLE_RE = /^(iphone news|.*newsroom|.*smartphones?\s*\|.*|view all phones?)$/i;
+const GENERIC_TITLE_RE = /^(iphone news|.*newsroom|.*smartphones?\s*\|.*|view all phones?|phone reviews|.*coverage\s*\|.*|.*tag\s*\|.*)$/i;
+const NON_LAUNCH_TITLE_RE = /\b(review|reviews|hands-on|impressions|comparison|compares|versus|vs\.?|camera|accessories|coverage|guide|explained|why|how to)\b/i;
 const NON_HTML_PATH_RE = /\.(?:pdf|zip|rar|7z|docx?|xlsx?|pptx?|mp4|webm|mp3)(?:$|[?#])/i;
 
 function clean(html = '') {
@@ -63,7 +64,7 @@ function candidateUrl(url, base) {
 }
 function isUsefulTitle(title) {
   const normalized = clean(title);
-  return normalized.length >= 8 && normalized.length <= 220 && !GENERIC_TITLE_RE.test(normalized)
+  return normalized.length >= 8 && normalized.length <= 220 && !GENERIC_TITLE_RE.test(normalized) && !NON_LAUNCH_TITLE_RE.test(normalized)
     && PHONE_RE.test(normalized) && !EXCLUDE_RE.test(normalized);
 }
 function extractLinks(html, base, hosts) {
@@ -122,7 +123,9 @@ function explicitLaunchDate(text) {
   const patterns = [
     /(?:available|on shelves|goes on sale|launch(?:es|ing)?|arriv(?:es|ing))[^.]{0,120}?(?:on|from)\s+(January|February|March|April|May|June|July|August|September|October|November|December)\s+(\d{1,2})(?:,?\s*(\d{4}))?/i,
     /(?:available|on shelves|goes on sale|launch(?:es|ing)?|arriv(?:es|ing))[^.]{0,120}?(?:on|from)\s+(\d{1,2})\s+(January|February|March|April|May|June|July|August|September|October|November|December)(?:,?\s*(\d{4}))?/i,
-    /(?:disponible|commercialis[ée]|lancement|arrive)[^.]{0,120}?(?:dès|à partir du|le)\s+(\d{1,2})\s+(janvier|février|fevrier|mars|avril|mai|juin|juillet|août|aout|septembre|octobre|novembre|décembre)(?:\s+(\d{4}))?/i
+    /(?:disponible|commercialis[ée]|lancement|arrive|sortie|dévoil(?:é|ée|er)|présent(?:é|ée|er)|annonc(?:é|ée|er))[^.]{0,160}?(?:dès|à partir du|le|prévu(?:e)? le|attendu(?:e)? le)\s+(\d{1,2})\s+(janvier|février|fevrier|mars|avril|mai|juin|juillet|août|aout|septembre|octobre|novembre|décembre)(?:\s+(\d{4}))?/i,
+    /(?:launch|debut|unveil|reveal|announce|availability|goes on sale|pre-?order)[^.]{0,160}?(?:on|for|from|expected on|expected for|scheduled for|set for)\s+(January|February|March|April|May|June|July|August|September|October|November|December)\s+(\d{1,2})(?:st|nd|rd|th)?(?:,?\s*(\d{4}))?/i,
+    /(?:launch|debut|unveil|reveal|announce|availability|goes on sale|pre-?order)[^.]{0,160}?(?:on|for|from|expected on|expected for|scheduled for|set for)\s+(\d{1,2})(?:st|nd|rd|th)?\s+(January|February|March|April|May|June|July|August|September|October|November|December)(?:,?\s*(\d{4}))?/i
   ];
   for (const pattern of patterns) {
     const m = text.match(pattern);
@@ -222,7 +225,7 @@ await Promise.all(sources.map(async (source) => {
         const officialUrl = canonicalUrl(page.finalUrl || link.url);
         if (!officialUrl || !candidateUrl(officialUrl, source.url)) return;
 
-        const date = explicitLaunchDate(text) || (source.role === 'industry' ? genericDatedLaunch(text) : null);
+        const date = explicitLaunchDate(text);
         const prior = previousByUrl.get(officialUrl);
         const image = mediaImageOf(page.text, officialUrl) || prior?.image || null;
         const streamUrl = mediaVideoOf(page.text, officialUrl) || prior?.streamUrl || null;
