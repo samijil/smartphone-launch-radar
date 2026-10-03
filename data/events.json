@@ -1,48 +1,7 @@
 {
   "$schema": "https://smartphone-launch-radar.local/schema/events-v1",
   "month": "2026-10",
-  "updatedAt": "2026-10-02T11:07:42.184Z",
-  "sourcesNote": "Mise à jour automatisée du 2026-10-02T11:07:42.184Z: 0 événement(s) confirmés officiellement et 1 événement(s) rapportés par des médias spécialisés fiables, avec niveau de confiance affiché. Photos, diffusion et liens commerciaux sont enrichis lorsqu'ils existent.",
-  "events": [
-    {
-      "id": "industry-gsmarena-oneplus-16-confirmed-to-pack-a-much-larger-battery-than-its-predecessor",
-      "name": "OnePlus 16",
-      "brand": "OnePlus",
-      "date": "2026-10-12T00:00:00.000Z",
-      "timezone": "UTC",
-      "region": "GLOBAL",
-      "status": "UPCOMING",
-      "confidence": "REPORTED",
-      "summary": "OnePlus 16 confirmed to pack a much larger battery than its predecessor - GSMArena.com news Login I forgot my password Home Compare Tip us Privacy News Daily deals Rumor mill Merch Reviews Glossary Coverage Contact us Samsung Xiaomi Oneplus Google Apple Sony Motorola vivo Huawei Honor Oppo [...] Phone finder My phone Desktop version Android app Go Advanced News Reviews Phones Home News Reviews Videos Comments (10) Post your comment OnePlus 16 confirmed to pack a much larger battery than its predecessor Siddharth, 02 October 2026 Ahead of its upcoming launch, OnePlus has confirmed a major batte",
-      "specifications": {},
-      "image": "https://fdn.gsmarena.com/imgroot/news/26/10/oneplus-16-battery-revealed/-952x498w6/gsmarena_00.jpg",
-      "officialUrl": "https://m.gsmarena.com/oneplus_16_confirmed_to_pack_a_much_larger_battery_than_its_predecessor-news-74859.php",
-      "sourceUrl": "https://m.gsmarena.com/oneplus_16_confirmed_to_pack_a_much_larger_battery_than_its_predecessor-news-74859.php",
-      "collectedAt": "2026-10-02T11:07:30.570Z",
-      "requiresReview": false,
-      "deviceModel": "OnePlus 16",
-      "groupKey": "oneplus-16",
-      "announcements": [
-        {
-          "id": "industry-gsmarena-oneplus-16-confirmed-to-pack-a-much-larger-battery-than-its-predecessor",
-          "name": "OnePlus 16 confirmed to pack a much larger battery than its predecessor",
-          "brand": "OnePlus",
-          "date": "2026-10-12T00:00:00.000Z",
-          "timezone": "UTC",
-          "region": "GLOBAL",
-          "status": "UPCOMING",
-          "confidence": "REPORTED",
-          "summary": "OnePlus 16 confirmed to pack a much larger battery than its predecessor - GSMArena.com news Login I forgot my password Home Compare Tip us Privacy News Daily deals Rumor mill Merch Reviews Glossary Coverage Contact us Samsung Xiaomi Oneplus Google Apple Sony Motorola vivo Huawei Honor Oppo [...] Phone finder My phone Desktop version Android app Go Advanced News Reviews Phones Home News Reviews Videos Comments (10) Post your comment OnePlus 16 confirmed to pack a much larger battery than its predecessor Siddharth, 02 October 2026 Ahead of its upcoming launch, OnePlus has confirmed a major batte",
-          "specifications": {},
-          "image": "https://fdn.gsmarena.com/imgroot/news/26/10/oneplus-16-battery-revealed/-952x498w6/gsmarena_00.jpg",
-          "officialUrl": "https://m.gsmarena.com/oneplus_16_confirmed_to_pack_a_much_larger_battery_than_its_predecessor-news-74859.php",
-          "sourceUrl": "https://m.gsmarena.com/oneplus_16_confirmed_to_pack_a_much_larger_battery_than_its_predecessor-news-74859.php",
-          "collectedAt": "2026-10-02T11:07:30.570Z",
-          "requiresReview": false,
-          "deviceModel": "OnePlus 16"
-        }
-      ],
-      "announcementCount": 1
-    }
-  ]
+  "updatedAt": "2026-10-03T10:25:51.757Z",
+  "sourcesNote": "Mise à jour automatisée du 2026-10-03T10:25:51.757Z: 0 événement(s) confirmés officiellement et 0 événement(s) rapportés par des médias spécialisés fiables, avec niveau de confiance affiché. Photos, diffusion et liens commerciaux sont enrichis lorsqu'ils existent.",
+  "events": []
 }
