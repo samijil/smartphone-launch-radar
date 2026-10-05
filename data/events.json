@@ -1,7 +1,68 @@
 {
   "$schema": "https://smartphone-launch-radar.local/schema/events-v1",
   "month": "2026-10",
-  "updatedAt": "2026-10-04T11:07:44.215Z",
-  "sourcesNote": "Mise à jour automatisée du 2026-10-04T11:07:44.215Z: 0 événement(s) confirmés officiellement et 0 événement(s) rapportés par des médias spécialisés fiables, avec niveau de confiance affiché. Photos, diffusion et liens commerciaux sont enrichis lorsqu'ils existent.",
-  "events": []
+  "updatedAt": "2026-10-05T12:18:22.375Z",
+  "sourcesNote": "Mise à jour automatisée du 2026-10-05T12:18:22.375Z: 0 événement(s) confirmés officiellement et 1 événement(s) rapportés par des médias spécialisés fiables, avec niveau de confiance affiché. Photos, diffusion et liens commerciaux sont enrichis lorsqu'ils existent.",
+  "events": [
+    {
+      "id": "industry-notebookcheck-smartphone",
+      "name": "Smartphone",
+      "brand": "Notebookcheck",
+      "date": "2026-10-12T00:00:00.000Z",
+      "timezone": "UTC",
+      "region": "GLOBAL",
+      "status": "UPCOMING",
+      "confidence": "REPORTED",
+      "summary": "Smartphone - Notebookcheck News &#9660; Reviews News Videos Benchmarks / Tech Buyers Guide Magazine Library Search Jobs ... Deutsch English Español Français Italiano Nederlands Polski Português Русский Türkçe Svenska Chinese Magyar Alle Artikel über Smartphones Here you can find all articles like reviews and news about smartphones. The list is sorted by date and can be restricted in the options below. Icon von Smashicons , flaticon.com CC 3.0 BY Reviews Laptop Smartphone Tablet Ticker restrict 50 Page Type Restrict articles to display by Page Type. Each article only falls under one Page Type c",
+      "specifications": {},
+      "image": "https://www.notebookcheck.net/fileadmin/Notebooks/Sonstiges/1a_charticon_smart_4zu3.jpg",
+      "officialUrl": "https://www.notebookcheck.net/Smartphone.305158.0.html",
+      "sourceUrl": "https://www.notebookcheck.net/Smartphone.305158.0.html",
+      "collectedAt": "2026-10-05T12:18:09.122Z",
+      "requiresReview": false,
+      "enrichmentErrors": [
+        {
+          "url": "https://www.notebookcheck.net/Smartphone.305158.0.html",
+          "error": "HTTP 403"
+        },
+        {
+          "url": "https://www.notebookcheck.net/Smartphone.305158.0.html",
+          "error": "HTTP 403"
+        }
+      ],
+      "deviceModel": "Smartphone",
+      "groupKey": "smartphone",
+      "announcements": [
+        {
+          "id": "industry-notebookcheck-smartphone",
+          "name": "Smartphone",
+          "brand": "Notebookcheck",
+          "date": "2026-10-12T00:00:00.000Z",
+          "timezone": "UTC",
+          "region": "GLOBAL",
+          "status": "UPCOMING",
+          "confidence": "REPORTED",
+          "summary": "Smartphone - Notebookcheck News &#9660; Reviews News Videos Benchmarks / Tech Buyers Guide Magazine Library Search Jobs ... Deutsch English Español Français Italiano Nederlands Polski Português Русский Türkçe Svenska Chinese Magyar Alle Artikel über Smartphones Here you can find all articles like reviews and news about smartphones. The list is sorted by date and can be restricted in the options below. Icon von Smashicons , flaticon.com CC 3.0 BY Reviews Laptop Smartphone Tablet Ticker restrict 50 Page Type Restrict articles to display by Page Type. Each article only falls under one Page Type c",
+          "specifications": {},
+          "image": "https://www.notebookcheck.net/fileadmin/Notebooks/Sonstiges/1a_charticon_smart_4zu3.jpg",
+          "officialUrl": "https://www.notebookcheck.net/Smartphone.305158.0.html",
+          "sourceUrl": "https://www.notebookcheck.net/Smartphone.305158.0.html",
+          "collectedAt": "2026-10-05T12:18:09.122Z",
+          "requiresReview": false,
+          "enrichmentErrors": [
+            {
+              "url": "https://www.notebookcheck.net/Smartphone.305158.0.html",
+              "error": "HTTP 403"
+            },
+            {
+              "url": "https://www.notebookcheck.net/Smartphone.305158.0.html",
+              "error": "HTTP 403"
+            }
+          ],
+          "deviceModel": "Smartphone"
+        }
+      ],
+      "announcementCount": 1
+    }
+  ]
 }
