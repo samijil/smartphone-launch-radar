@@ -1,65 +1,45 @@
 {
   "$schema": "https://smartphone-launch-radar.local/schema/events-v1",
   "month": "2026-10",
-  "updatedAt": "2026-10-06T12:03:06.791Z",
-  "sourcesNote": "Mise à jour automatisée du 2026-10-06T12:03:06.791Z: 0 événement(s) confirmés officiellement et 1 événement(s) rapportés par des médias spécialisés fiables, avec niveau de confiance affiché. Photos, diffusion et liens commerciaux sont enrichis lorsqu'ils existent.",
+  "updatedAt": "2026-10-07T11:48:34.231Z",
+  "sourcesNote": "Mise à jour automatisée du 2026-10-07T11:48:34.231Z: 0 événement(s) confirmés officiellement et 1 événement(s) rapportés par des médias spécialisés fiables, avec niveau de confiance affiché. Photos, diffusion et liens commerciaux sont enrichis lorsqu'ils existent.",
   "events": [
     {
-      "id": "industry-notebookcheck-smartphone",
-      "name": "Smartphone",
-      "brand": "Notebookcheck",
-      "date": "2026-10-12T00:00:00.000Z",
+      "id": "industry-gsmarena-apple-is-making-sure-you-have-iphone-duo-compatible-apps-at-launch",
+      "name": "iPhone Duo",
+      "brand": "Apple",
+      "date": "2026-10-16T00:00:00.000Z",
       "timezone": "UTC",
       "region": "GLOBAL",
       "status": "UPCOMING",
       "confidence": "REPORTED",
-      "summary": "Smartphone - Notebookcheck News &#9660; Reviews News Videos Benchmarks / Tech Buyers Guide Magazine Library Search Jobs ... Deutsch English Español Français Italiano Nederlands Polski Português Русский Türkçe Svenska Chinese Magyar Alle Artikel über Smartphones Here you can find all articles like reviews and news about smartphones. The list is sorted by date and can be restricted in the options below. Icon von Smashicons , flaticon.com CC 3.0 BY Reviews Laptop Smartphone Tablet Ticker restrict 50 Page Type Restrict articles to display by Page Type. Each article only falls under one Page Type c",
+      "summary": "Apple is making sure you have iPhone Duo-compatible apps at launch - GSMArena.com news Login I forgot my password Home Compare Tip us Privacy News Daily deals Rumor mill Merch Reviews Glossary Coverage Contact us Samsung Xiaomi Oneplus Google Apple Sony Motorola vivo Huawei Honor Oppo [...] Phone finder My phone Desktop version Android app Go Advanced News Reviews Phones Home News Reviews Videos Comments (20) Post your comment Apple is making sure you have iPhone Duo-compatible apps at launch Ro, 07 October 2026 The new iPhone Duo will be available for pre-order on October 16, with actual deli",
       "specifications": {},
-      "image": "https://www.notebookcheck.net/fileadmin/Notebooks/Sonstiges/1a_charticon_smart_4zu3.jpg",
-      "officialUrl": "https://www.notebookcheck.net/Smartphone.305158.0.html",
-      "sourceUrl": "https://www.notebookcheck.net/Smartphone.305158.0.html",
-      "collectedAt": "2026-10-06T12:02:54.239Z",
+      "image": "https://fdn.gsmarena.com/imgroot/news/26/09/iphone-duo-official/-952x498w6/gsmarena_000.jpg",
+      "officialUrl": "https://m.gsmarena.com/developers_are_now_free_to_submit_iphone_duocompatible_apps_to_the_app_store-news-74920.php",
+      "sourceUrl": "https://m.gsmarena.com/developers_are_now_free_to_submit_iphone_duocompatible_apps_to_the_app_store-news-74920.php",
+      "collectedAt": "2026-10-07T11:48:33.756Z",
       "requiresReview": false,
-      "enrichmentErrors": [
-        {
-          "url": "https://www.notebookcheck.net/Smartphone.305158.0.html",
-          "error": "HTTP 403"
-        },
-        {
-          "url": "https://www.notebookcheck.net/Smartphone.305158.0.html",
-          "error": "HTTP 403"
-        }
-      ],
-      "deviceModel": "Smartphone",
-      "groupKey": "smartphone",
+      "deviceModel": "iPhone Duo",
+      "groupKey": "iphone-duo",
       "announcements": [
         {
-          "id": "industry-notebookcheck-smartphone",
-          "name": "Smartphone",
-          "brand": "Notebookcheck",
-          "date": "2026-10-12T00:00:00.000Z",
+          "id": "industry-gsmarena-apple-is-making-sure-you-have-iphone-duo-compatible-apps-at-launch",
+          "name": "Apple is making sure you have iPhone Duo-compatible apps at launch",
+          "brand": "Apple",
+          "date": "2026-10-16T00:00:00.000Z",
           "timezone": "UTC",
           "region": "GLOBAL",
           "status": "UPCOMING",
           "confidence": "REPORTED",
-          "summary": "Smartphone - Notebookcheck News &#9660; Reviews News Videos Benchmarks / Tech Buyers Guide Magazine Library Search Jobs ... Deutsch English Español Français Italiano Nederlands Polski Português Русский Türkçe Svenska Chinese Magyar Alle Artikel über Smartphones Here you can find all articles like reviews and news about smartphones. The list is sorted by date and can be restricted in the options below. Icon von Smashicons , flaticon.com CC 3.0 BY Reviews Laptop Smartphone Tablet Ticker restrict 50 Page Type Restrict articles to display by Page Type. Each article only falls under one Page Type c",
+          "summary": "Apple is making sure you have iPhone Duo-compatible apps at launch - GSMArena.com news Login I forgot my password Home Compare Tip us Privacy News Daily deals Rumor mill Merch Reviews Glossary Coverage Contact us Samsung Xiaomi Oneplus Google Apple Sony Motorola vivo Huawei Honor Oppo [...] Phone finder My phone Desktop version Android app Go Advanced News Reviews Phones Home News Reviews Videos Comments (20) Post your comment Apple is making sure you have iPhone Duo-compatible apps at launch Ro, 07 October 2026 The new iPhone Duo will be available for pre-order on October 16, with actual deli",
           "specifications": {},
-          "image": "https://www.notebookcheck.net/fileadmin/Notebooks/Sonstiges/1a_charticon_smart_4zu3.jpg",
-          "officialUrl": "https://www.notebookcheck.net/Smartphone.305158.0.html",
-          "sourceUrl": "https://www.notebookcheck.net/Smartphone.305158.0.html",
-          "collectedAt": "2026-10-06T12:02:54.239Z",
+          "image": "https://fdn.gsmarena.com/imgroot/news/26/09/iphone-duo-official/-952x498w6/gsmarena_000.jpg",
+          "officialUrl": "https://m.gsmarena.com/developers_are_now_free_to_submit_iphone_duocompatible_apps_to_the_app_store-news-74920.php",
+          "sourceUrl": "https://m.gsmarena.com/developers_are_now_free_to_submit_iphone_duocompatible_apps_to_the_app_store-news-74920.php",
+          "collectedAt": "2026-10-07T11:48:33.756Z",
           "requiresReview": false,
-          "enrichmentErrors": [
-            {
-              "url": "https://www.notebookcheck.net/Smartphone.305158.0.html",
-              "error": "HTTP 403"
-            },
-            {
-              "url": "https://www.notebookcheck.net/Smartphone.305158.0.html",
-              "error": "HTTP 403"
-            }
-          ],
-          "deviceModel": "Smartphone"
+          "deviceModel": "iPhone Duo"
         }
       ],
       "announcementCount": 1
