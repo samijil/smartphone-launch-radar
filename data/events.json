@@ -1,48 +1,7 @@
 {
   "$schema": "https://smartphone-launch-radar.local/schema/events-v1",
   "month": "2026-10",
-  "updatedAt": "2026-10-07T11:48:34.231Z",
-  "sourcesNote": "Mise à jour automatisée du 2026-10-07T11:48:34.231Z: 0 événement(s) confirmés officiellement et 1 événement(s) rapportés par des médias spécialisés fiables, avec niveau de confiance affiché. Photos, diffusion et liens commerciaux sont enrichis lorsqu'ils existent.",
-  "events": [
-    {
-      "id": "industry-gsmarena-apple-is-making-sure-you-have-iphone-duo-compatible-apps-at-launch",
-      "name": "iPhone Duo",
-      "brand": "Apple",
-      "date": "2026-10-16T00:00:00.000Z",
-      "timezone": "UTC",
-      "region": "GLOBAL",
-      "status": "UPCOMING",
-      "confidence": "REPORTED",
-      "summary": "Apple is making sure you have iPhone Duo-compatible apps at launch - GSMArena.com news Login I forgot my password Home Compare Tip us Privacy News Daily deals Rumor mill Merch Reviews Glossary Coverage Contact us Samsung Xiaomi Oneplus Google Apple Sony Motorola vivo Huawei Honor Oppo [...] Phone finder My phone Desktop version Android app Go Advanced News Reviews Phones Home News Reviews Videos Comments (20) Post your comment Apple is making sure you have iPhone Duo-compatible apps at launch Ro, 07 October 2026 The new iPhone Duo will be available for pre-order on October 16, with actual deli",
-      "specifications": {},
-      "image": "https://fdn.gsmarena.com/imgroot/news/26/09/iphone-duo-official/-952x498w6/gsmarena_000.jpg",
-      "officialUrl": "https://m.gsmarena.com/developers_are_now_free_to_submit_iphone_duocompatible_apps_to_the_app_store-news-74920.php",
-      "sourceUrl": "https://m.gsmarena.com/developers_are_now_free_to_submit_iphone_duocompatible_apps_to_the_app_store-news-74920.php",
-      "collectedAt": "2026-10-07T11:48:33.756Z",
-      "requiresReview": false,
-      "deviceModel": "iPhone Duo",
-      "groupKey": "iphone-duo",
-      "announcements": [
-        {
-          "id": "industry-gsmarena-apple-is-making-sure-you-have-iphone-duo-compatible-apps-at-launch",
-          "name": "Apple is making sure you have iPhone Duo-compatible apps at launch",
-          "brand": "Apple",
-          "date": "2026-10-16T00:00:00.000Z",
-          "timezone": "UTC",
-          "region": "GLOBAL",
-          "status": "UPCOMING",
-          "confidence": "REPORTED",
-          "summary": "Apple is making sure you have iPhone Duo-compatible apps at launch - GSMArena.com news Login I forgot my password Home Compare Tip us Privacy News Daily deals Rumor mill Merch Reviews Glossary Coverage Contact us Samsung Xiaomi Oneplus Google Apple Sony Motorola vivo Huawei Honor Oppo [...] Phone finder My phone Desktop version Android app Go Advanced News Reviews Phones Home News Reviews Videos Comments (20) Post your comment Apple is making sure you have iPhone Duo-compatible apps at launch Ro, 07 October 2026 The new iPhone Duo will be available for pre-order on October 16, with actual deli",
-          "specifications": {},
-          "image": "https://fdn.gsmarena.com/imgroot/news/26/09/iphone-duo-official/-952x498w6/gsmarena_000.jpg",
-          "officialUrl": "https://m.gsmarena.com/developers_are_now_free_to_submit_iphone_duocompatible_apps_to_the_app_store-news-74920.php",
-          "sourceUrl": "https://m.gsmarena.com/developers_are_now_free_to_submit_iphone_duocompatible_apps_to_the_app_store-news-74920.php",
-          "collectedAt": "2026-10-07T11:48:33.756Z",
-          "requiresReview": false,
-          "deviceModel": "iPhone Duo"
-        }
-      ],
-      "announcementCount": 1
-    }
-  ]
+  "updatedAt": "2026-10-08T12:03:31.094Z",
+  "sourcesNote": "Mise à jour automatisée du 2026-10-08T12:03:31.094Z: 0 événement(s) confirmés officiellement et 0 événement(s) rapportés par des médias spécialisés fiables, avec niveau de confiance affiché. Photos, diffusion et liens commerciaux sont enrichis lorsqu'ils existent.",
+  "events": []
 }
