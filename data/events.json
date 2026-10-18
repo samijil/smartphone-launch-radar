@@ -1,8 +1,8 @@
 {
   "$schema": "https://smartphone-launch-radar.local/schema/events-v1",
   "month": "2026-10",
-  "updatedAt": "2026-10-17T09:23:43.465Z",
-  "sourcesNote": "Mise à jour automatisée du 2026-10-17T09:23:43.465Z: 0 événement(s) confirmés officiellement et 1 événement(s) rapportés par des médias spécialisés fiables, avec niveau de confiance affiché. Photos, diffusion et liens commerciaux sont enrichis lorsqu'ils existent.",
+  "updatedAt": "2026-10-18T09:39:27.341Z",
+  "sourcesNote": "Mise à jour automatisée du 2026-10-18T09:39:27.341Z: 0 événement(s) confirmés officiellement et 1 événement(s) rapportés par des médias spécialisés fiables, avec niveau de confiance affiché. Photos, diffusion et liens commerciaux sont enrichis lorsqu'ils existent.",
   "events": [
     {
       "id": "industry-the-verge-all-the-news-about-the-iphone-duo",
@@ -18,7 +18,7 @@
       "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/09/268734_iPhone_Duo_handson_ADiBenedetto_0017.jpg?quality=90&strip=all&crop=0%2C10.732984293194%2C100%2C78.534031413613&w=1200",
       "officialUrl": "https://www.theverge.com/tech/1010131/apple-iphone-duo-news-announcements",
       "sourceUrl": "https://www.theverge.com/tech/1010131/apple-iphone-duo-news-announcements",
-      "collectedAt": "2026-10-17T09:23:40.288Z",
+      "collectedAt": "2026-10-18T09:39:20.248Z",
       "requiresReview": false,
       "productUrl": "https://www.theverge.com/buying-guides",
       "deviceModel": "iPhone Duo",
@@ -38,51 +38,13 @@
           "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/09/268734_iPhone_Duo_handson_ADiBenedetto_0017.jpg?quality=90&strip=all&crop=0%2C10.732984293194%2C100%2C78.534031413613&w=1200",
           "officialUrl": "https://www.theverge.com/tech/1010131/apple-iphone-duo-news-announcements",
           "sourceUrl": "https://www.theverge.com/tech/1010131/apple-iphone-duo-news-announcements",
-          "collectedAt": "2026-10-17T09:23:40.288Z",
+          "collectedAt": "2026-10-18T09:39:20.248Z",
           "requiresReview": false,
           "productUrl": "https://www.theverge.com/buying-guides",
-          "deviceModel": "iPhone Duo"
-        },
-        {
-          "id": "industry-the-verge-iphone-duo-orders-are-already-delayed-into-2027",
-          "name": "iPhone Duo orders are already delayed into 2027",
-          "brand": "Apple",
-          "date": "2026-10-23T00:00:00.000Z",
-          "timezone": "UTC",
-          "region": "GLOBAL",
-          "status": "UPCOMING",
-          "confidence": "REPORTED",
-          "summary": "iPhone Duo orders are already delayed into 2027 | The Verge Skip to main content The homepage The Verge The Verge logo. The Verge The Verge logo. Tech Reviews Science Entertainment AI Policy Notifications Notifications Hamburger Navigation Button The homepage The Verge The Verge logo. Notifications Notifications Hamburger Navigation Button Navigation Drawer The Verge The Verge logo. Login / Sign Up close Close Search Light System Dark Tech Expand Amazon Apple Facebook Google Microsoft Samsung Business See all tech Reviews Expand Smart Home Reviews Phone Reviews Tablet Reviews Headphone Reviews",
-          "specifications": {},
-          "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/09/apple-event-september-2026-452-10-57-30.jpg?quality=90&strip=all&crop=0%2C3.159993948987%2C100%2C93.680012102026&w=1200",
-          "officialUrl": "https://www.theverge.com/tech/1012805/apple-iphone-duo-preorder-delay",
-          "sourceUrl": "https://www.theverge.com/tech/1012805/apple-iphone-duo-preorder-delay",
-          "collectedAt": "2026-10-17T09:23:39.749Z",
-          "requiresReview": false,
-          "productUrl": "https://www.theverge.com/buying-guides",
-          "deviceModel": "iPhone Duo"
-        },
-        {
-          "id": "industry-gsmarena-if-you-haven-039-t-pre-ordered-an-iphone-duo-yet-you-039-re-in-for-a-long-long-wait",
-          "name": "If you haven&#039;t pre-ordered an iPhone Duo yet, you&#039;re in for a long, long wait",
-          "brand": "Apple",
-          "date": "2026-10-24T00:00:00.000Z",
-          "timezone": "UTC",
-          "region": "GLOBAL",
-          "status": "UPCOMING",
-          "confidence": "REPORTED",
-          "summary": "If you haven't pre-ordered an iPhone Duo yet, you're in for a long, long wait - GSMArena.com news Login I forgot my password Home Compare Tip us Privacy News Daily deals Rumor mill Merch Reviews Glossary Coverage Contact us Samsung Xiaomi Oneplus Google Apple Sony Motorola vivo Huawei Honor Oppo [...] Phone finder My phone Desktop version Android app Go Advanced News Reviews Phones Home News Reviews Videos Comments (19) Post your comment If you haven't pre-ordered an iPhone Duo yet, you're in for a long, long wait Peter, 16 October 2026 The Apple iPhone Duo is available for pre-order starting ",
-          "specifications": {},
-          "image": "https://fdn.gsmarena.com/imgroot/news/26/10/apple-iphone-duo-shipping-date-goes-into-2027/-952x498w6/gsmarena_000.jpg",
-          "officialUrl": "https://m.gsmarena.com/if_you_havent_preordered_an_iphone_duo_yet_but_want_one_youre_in_for_a_long_long_wait-news-75091.php",
-          "sourceUrl": "https://m.gsmarena.com/if_you_havent_preordered_an_iphone_duo_yet_but_want_one_youre_in_for_a_long_long_wait-news-75091.php",
-          "collectedAt": "2026-10-17T09:23:42.124Z",
-          "requiresReview": false,
-          "productUrl": "https://m.gsmarena.com/apple_iphone_duo_pre_orders_begin-news-75077.php",
           "deviceModel": "iPhone Duo"
         }
       ],
-      "announcementCount": 3
+      "announcementCount": 1
     }
   ]
 }
