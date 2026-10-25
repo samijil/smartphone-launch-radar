@@ -1,8 +1,8 @@
 {
   "$schema": "https://smartphone-launch-radar.local/schema/events-v1",
   "month": "2026-10",
-  "updatedAt": "2026-10-24T09:33:48.764Z",
-  "sourcesNote": "Mise à jour automatisée du 2026-10-24T09:33:48.764Z: 0 événement(s) confirmés officiellement et 2 événement(s) rapportés par des médias spécialisés fiables, avec niveau de confiance affiché. Photos, diffusion et liens commerciaux sont enrichis lorsqu'ils existent.",
+  "updatedAt": "2026-10-25T09:50:00.626Z",
+  "sourcesNote": "Mise à jour automatisée du 2026-10-25T09:50:00.626Z: 0 événement(s) confirmés officiellement et 3 événement(s) rapportés par des médias spécialisés fiables, avec niveau de confiance affiché. Photos, diffusion et liens commerciaux sont enrichis lorsqu'ils existent.",
   "events": [
     {
       "id": "industry-digital-trends-apple-just-dropped-the-hammer-on-iphone-duo-scalpers-with-a-strict-purchase-limit",
@@ -18,7 +18,7 @@
       "image": "https://i0.wp.com/cdn.dtmg.xyz/uploads/2026/09/iOS-27s-home-screen-on-iPhone-Duo.jpg?resize=1200%2C630&ssl=1",
       "officialUrl": "https://www.digitaltrends.com/phones/apple-just-dropped-the-hammer-on-iphone-duo-scalpers-with-a-strict-purchase-limit/",
       "sourceUrl": "https://www.digitaltrends.com/phones/apple-just-dropped-the-hammer-on-iphone-duo-scalpers-with-a-strict-purchase-limit/",
-      "collectedAt": "2026-10-24T09:33:43.703Z",
+      "collectedAt": "2026-10-25T09:49:54.883Z",
       "requiresReview": false,
       "productUrl": "https://www.digitaltrends.com/home-theater/how-to-pre-order-the-iphone-duo-iphone-18-pro-apple-watch-series-12-apple-watch-ultra-4-and-airpods-5/",
       "deviceModel": "iPhone Duo",
@@ -38,7 +38,7 @@
           "image": "https://i0.wp.com/cdn.dtmg.xyz/uploads/2026/09/iOS-27s-home-screen-on-iPhone-Duo.jpg?resize=1200%2C630&ssl=1",
           "officialUrl": "https://www.digitaltrends.com/phones/apple-just-dropped-the-hammer-on-iphone-duo-scalpers-with-a-strict-purchase-limit/",
           "sourceUrl": "https://www.digitaltrends.com/phones/apple-just-dropped-the-hammer-on-iphone-duo-scalpers-with-a-strict-purchase-limit/",
-          "collectedAt": "2026-10-24T09:33:43.703Z",
+          "collectedAt": "2026-10-25T09:49:54.883Z",
           "requiresReview": false,
           "productUrl": "https://www.digitaltrends.com/home-theater/how-to-pre-order-the-iphone-duo-iphone-18-pro-apple-watch-series-12-apple-watch-ultra-4-and-airpods-5/",
           "deviceModel": "iPhone Duo"
@@ -57,13 +57,73 @@
           "image": "https://i0.wp.com/cdn.dtmg.xyz/uploads/2026/09/iPhone-Duos-Smart-Take-feature.jpg?resize=1200%2C630&ssl=1",
           "officialUrl": "https://www.digitaltrends.com/phones/apples-iphone-duo-supply-crunch-could-leave-walk-in-buyers-scrambling-with-limited-stocks/",
           "sourceUrl": "https://www.digitaltrends.com/phones/apples-iphone-duo-supply-crunch-could-leave-walk-in-buyers-scrambling-with-limited-stocks/",
-          "collectedAt": "2026-10-24T09:33:43.522Z",
+          "collectedAt": "2026-10-25T09:49:54.975Z",
           "requiresReview": false,
           "productUrl": "https://www.digitaltrends.com/phones/apple-just-dropped-the-hammer-on-iphone-duo-scalpers-with-a-strict-purchase-limit/",
           "deviceModel": "iPhone Duo"
+        },
+        {
+          "id": "industry-gsmarena-deals-oppo-find-x10-series-gets-pre-order-discounts-iphone-duo-goes-on-sale",
+          "name": "Deals: Oppo Find X10 series gets pre-order discounts, iPhone Duo goes on sale",
+          "brand": "Apple",
+          "date": "2026-10-27T00:00:00.000Z",
+          "timezone": "UTC",
+          "region": "GLOBAL",
+          "status": "UPCOMING",
+          "confidence": "REPORTED",
+          "summary": "Deals: Oppo Find X10 series gets pre-order discounts, iPhone Duo goes on sale - GSMArena.com news Login I forgot my password Home Compare Tip us Privacy News Daily deals Rumor mill Merch Reviews Glossary Coverage Contact us Samsung Xiaomi Oneplus Google Apple Sony Motorola vivo Huawei Honor Oppo [...] Phone finder My phone Desktop version Android app Go Advanced News Reviews Phones Home News Reviews Videos Comments (0) Post your comment Deals: Oppo Find X10 series gets pre-order discounts, iPhone Duo goes on sale Siddharth, 25 October 2026 Oppo recently launched the Find X10 and Find X10 Pro M",
+          "specifications": {},
+          "image": "https://fdn.gsmarena.com/imgroot/news/26/10/deals-23/-952x498w6/gsmarena_uk.jpg",
+          "officialUrl": "https://m.gsmarena.com/deals_oppo_find_x10_series_gets_preorder_discounts_iphone_duo_goes_on_sale-news-75198.php",
+          "sourceUrl": "https://m.gsmarena.com/deals_oppo_find_x10_series_gets_preorder_discounts_iphone_duo_goes_on_sale-news-75198.php",
+          "collectedAt": "2026-10-25T09:49:55.816Z",
+          "requiresReview": false,
+          "deviceModel": "iPhone Duo"
         }
       ],
-      "announcementCount": 2
+      "announcementCount": 3
+    },
+    {
+      "id": "industry-gsmarena-oneplus-shows-the-ace-7-and-ace-7-pro-in-all-colors",
+      "name": "OnePlus shows the Ace 7 and Ace 7 Pro in all colors",
+      "brand": "GSMArena",
+      "date": "2026-10-29T00:00:00.000Z",
+      "timezone": "UTC",
+      "region": "GLOBAL",
+      "status": "UPCOMING",
+      "confidence": "REPORTED",
+      "summary": "OnePlus shows the Ace 7 and Ace 7 Pro in all colors - GSMArena.com news Login I forgot my password Home Compare Tip us Privacy News Daily deals Rumor mill Merch Reviews Glossary Coverage Contact us Samsung Xiaomi Oneplus Google Apple Sony Motorola vivo Huawei Honor Oppo [...] Phone finder My phone Desktop version Android app Go Advanced News Reviews Phones Home News Reviews Videos Comments (1) Post your comment OnePlus shows the Ace 7 and Ace 7 Pro in all colors Vlad, 24 October 2026 OnePlus is launching the Ace 7 and Ace 7 Pro in China on October 29. Ahead of that, today the company has shown",
+      "specifications": {},
+      "image": "https://fdn.gsmarena.com/imgroot/news/26/10/oneplus-ace-7-ace-7-pro-all-colors/-952x498w6/gsmarena_000.jpg",
+      "officialUrl": "https://m.gsmarena.com/oneplus_shows_the_ace_7_and_ace_7_pro_in_all_colors-news-75200.php",
+      "sourceUrl": "https://m.gsmarena.com/oneplus_shows_the_ace_7_and_ace_7_pro_in_all_colors-news-75200.php",
+      "collectedAt": "2026-10-25T09:49:59.166Z",
+      "requiresReview": false,
+      "productUrl": "https://m.gsmarena.com/apple_reportedly_orders_44_more_iphone_duo_units_from_its_suppliers-news-75174.php",
+      "deviceModel": "OnePlus shows the Ace 7 and Ace 7 Pro in all colors",
+      "groupKey": "oneplus-shows-the-ace-7-and-ace-7-pro-in-all-colors",
+      "announcements": [
+        {
+          "id": "industry-gsmarena-oneplus-shows-the-ace-7-and-ace-7-pro-in-all-colors",
+          "name": "OnePlus shows the Ace 7 and Ace 7 Pro in all colors",
+          "brand": "GSMArena",
+          "date": "2026-10-29T00:00:00.000Z",
+          "timezone": "UTC",
+          "region": "GLOBAL",
+          "status": "UPCOMING",
+          "confidence": "REPORTED",
+          "summary": "OnePlus shows the Ace 7 and Ace 7 Pro in all colors - GSMArena.com news Login I forgot my password Home Compare Tip us Privacy News Daily deals Rumor mill Merch Reviews Glossary Coverage Contact us Samsung Xiaomi Oneplus Google Apple Sony Motorola vivo Huawei Honor Oppo [...] Phone finder My phone Desktop version Android app Go Advanced News Reviews Phones Home News Reviews Videos Comments (1) Post your comment OnePlus shows the Ace 7 and Ace 7 Pro in all colors Vlad, 24 October 2026 OnePlus is launching the Ace 7 and Ace 7 Pro in China on October 29. Ahead of that, today the company has shown",
+          "specifications": {},
+          "image": "https://fdn.gsmarena.com/imgroot/news/26/10/oneplus-ace-7-ace-7-pro-all-colors/-952x498w6/gsmarena_000.jpg",
+          "officialUrl": "https://m.gsmarena.com/oneplus_shows_the_ace_7_and_ace_7_pro_in_all_colors-news-75200.php",
+          "sourceUrl": "https://m.gsmarena.com/oneplus_shows_the_ace_7_and_ace_7_pro_in_all_colors-news-75200.php",
+          "collectedAt": "2026-10-25T09:49:59.166Z",
+          "requiresReview": false,
+          "productUrl": "https://m.gsmarena.com/apple_reportedly_orders_44_more_iphone_duo_units_from_its_suppliers-news-75174.php",
+          "deviceModel": "OnePlus shows the Ace 7 and Ace 7 Pro in all colors"
+        }
+      ],
+      "announcementCount": 1
     },
     {
       "id": "industry-digital-trends-we-now-have-a-phone-with-two-active-fans-to-keep-it-chill-and-a-ginormous-battery-too",
@@ -79,7 +139,7 @@
       "image": "https://i0.wp.com/cdn.dtmg.xyz/uploads/2026/10/Honor-Win-2-featured-scaled.jpg?resize=1200%2C630&ssl=1",
       "officialUrl": "https://www.digitaltrends.com/gaming/we-now-have-a-phone-with-two-active-fans-to-keep-it-chill-and-a-ginormous-battery-too/",
       "sourceUrl": "https://www.digitaltrends.com/gaming/we-now-have-a-phone-with-two-active-fans-to-keep-it-chill-and-a-ginormous-battery-too/",
-      "collectedAt": "2026-10-24T09:33:43.529Z",
+      "collectedAt": "2026-10-25T09:49:54.984Z",
       "requiresReview": false,
       "productUrl": "https://www.digitaltrends.com/gaming/we-now-have-a-phone-with-two-active-fans-to-keep-it-chill-and-a-ginormous-battery-too/%3C%-%20buttonURL%20%%3E",
       "deviceModel": "We now have a phone with two active fans to keep it chill, and a ginormous battery too.",
@@ -99,7 +159,7 @@
           "image": "https://i0.wp.com/cdn.dtmg.xyz/uploads/2026/10/Honor-Win-2-featured-scaled.jpg?resize=1200%2C630&ssl=1",
           "officialUrl": "https://www.digitaltrends.com/gaming/we-now-have-a-phone-with-two-active-fans-to-keep-it-chill-and-a-ginormous-battery-too/",
           "sourceUrl": "https://www.digitaltrends.com/gaming/we-now-have-a-phone-with-two-active-fans-to-keep-it-chill-and-a-ginormous-battery-too/",
-          "collectedAt": "2026-10-24T09:33:43.529Z",
+          "collectedAt": "2026-10-25T09:49:54.984Z",
           "requiresReview": false,
           "productUrl": "https://www.digitaltrends.com/gaming/we-now-have-a-phone-with-two-active-fans-to-keep-it-chill-and-a-ginormous-battery-too/%3C%-%20buttonURL%20%%3E",
           "deviceModel": "We now have a phone with two active fans to keep it chill, and a ginormous battery too."
