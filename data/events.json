@@ -1,8 +1,8 @@
 {
   "$schema": "https://smartphone-launch-radar.local/schema/events-v1",
   "month": "2026-10",
-  "updatedAt": "2026-10-27T10:37:03.096Z",
-  "sourcesNote": "Mise à jour automatisée du 2026-10-27T10:37:03.096Z: 0 événement(s) confirmés officiellement et 1 événement(s) rapportés par des médias spécialisés fiables, avec niveau de confiance affiché. Photos, diffusion et liens commerciaux sont enrichis lorsqu'ils existent.",
+  "updatedAt": "2026-10-28T11:21:57.763Z",
+  "sourcesNote": "Mise à jour automatisée du 2026-10-28T11:21:57.763Z: 0 événement(s) confirmés officiellement et 1 événement(s) rapportés par des médias spécialisés fiables, avec niveau de confiance affiché. Photos, diffusion et liens commerciaux sont enrichis lorsqu'ils existent.",
   "events": [
     {
       "id": "industry-digital-trends-you-can-now-play-zelda-and-mario-kart-on-your-iphone-ipad-and-mac-no-emulator-needed",
@@ -18,7 +18,7 @@
       "image": "https://i0.wp.com/cdn.dtmg.xyz/uploads/2026/03/Nintendo-Switch-2-Running-Mario-Kart.jpg?resize=1200%2C630&ssl=1",
       "officialUrl": "https://www.digitaltrends.com/gaming/nxnative-brings-native-nintendo-switch-games-to-apple-devices/",
       "sourceUrl": "https://www.digitaltrends.com/gaming/nxnative-brings-native-nintendo-switch-games-to-apple-devices/",
-      "collectedAt": "2026-10-27T10:36:54.899Z",
+      "collectedAt": "2026-10-28T11:21:50.826Z",
       "requiresReview": false,
       "productUrl": "https://www.digitaltrends.com/gaming/nxnative-brings-native-nintendo-switch-games-to-apple-devices/%3C%-%20buttonURL%20%%3E",
       "deviceModel": "You can now play Zelda and Mario Kart on your iPhone, iPad, and Mac, no emulator needed",
@@ -38,7 +38,7 @@
           "image": "https://i0.wp.com/cdn.dtmg.xyz/uploads/2026/03/Nintendo-Switch-2-Running-Mario-Kart.jpg?resize=1200%2C630&ssl=1",
           "officialUrl": "https://www.digitaltrends.com/gaming/nxnative-brings-native-nintendo-switch-games-to-apple-devices/",
           "sourceUrl": "https://www.digitaltrends.com/gaming/nxnative-brings-native-nintendo-switch-games-to-apple-devices/",
-          "collectedAt": "2026-10-27T10:36:54.899Z",
+          "collectedAt": "2026-10-28T11:21:50.826Z",
           "requiresReview": false,
           "productUrl": "https://www.digitaltrends.com/gaming/nxnative-brings-native-nintendo-switch-games-to-apple-devices/%3C%-%20buttonURL%20%%3E",
           "deviceModel": "You can now play Zelda and Mario Kart on your iPhone, iPad, and Mac, no emulator needed"
