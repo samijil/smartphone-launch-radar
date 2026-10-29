@@ -1,50 +1,7 @@
 {
   "$schema": "https://smartphone-launch-radar.local/schema/events-v1",
   "month": "2026-10",
-  "updatedAt": "2026-10-28T11:21:57.763Z",
-  "sourcesNote": "Mise à jour automatisée du 2026-10-28T11:21:57.763Z: 0 événement(s) confirmés officiellement et 1 événement(s) rapportés par des médias spécialisés fiables, avec niveau de confiance affiché. Photos, diffusion et liens commerciaux sont enrichis lorsqu'ils existent.",
-  "events": [
-    {
-      "id": "industry-digital-trends-you-can-now-play-zelda-and-mario-kart-on-your-iphone-ipad-and-mac-no-emulator-needed",
-      "name": "You can now play Zelda and Mario Kart on your iPhone, iPad, and Mac, no emulator needed",
-      "brand": "Digital Trends",
-      "date": "2026-10-29T00:00:00.000Z",
-      "timezone": "UTC",
-      "region": "GLOBAL",
-      "status": "UPCOMING",
-      "confidence": "REPORTED",
-      "summary": "You can now play Zelda and Mario Kart on your iPhone, iPad, and Mac, no emulator needed - Digital Trends Skip to main content Menu Digital Trends AI Computing Phones Gaming Entertainment Audio / Video Autos Smart Home Videos Search AI AI See All AI Trending Topics GPT-5 Copilot Grok DeepSeek Perplexity Google Gemini Apple Intelligence ChatGPT Trending Guides How to Use Gemini How to Use Apple Intelligence on Mac What to Know About AI agents Building an AI PC How to Use Gemini in Google Docs How to Use Copilot AI Things AI Can Do Free AI Classes AI Beginneer Guide Computing Computing See All Co",
-      "specifications": {},
-      "image": "https://i0.wp.com/cdn.dtmg.xyz/uploads/2026/03/Nintendo-Switch-2-Running-Mario-Kart.jpg?resize=1200%2C630&ssl=1",
-      "officialUrl": "https://www.digitaltrends.com/gaming/nxnative-brings-native-nintendo-switch-games-to-apple-devices/",
-      "sourceUrl": "https://www.digitaltrends.com/gaming/nxnative-brings-native-nintendo-switch-games-to-apple-devices/",
-      "collectedAt": "2026-10-28T11:21:50.826Z",
-      "requiresReview": false,
-      "productUrl": "https://www.digitaltrends.com/gaming/nxnative-brings-native-nintendo-switch-games-to-apple-devices/%3C%-%20buttonURL%20%%3E",
-      "deviceModel": "You can now play Zelda and Mario Kart on your iPhone, iPad, and Mac, no emulator needed",
-      "groupKey": "you-can-now-play-zelda-and-mario-kart-on-your-iphone-ipad-and-mac-no-emulator-needed",
-      "announcements": [
-        {
-          "id": "industry-digital-trends-you-can-now-play-zelda-and-mario-kart-on-your-iphone-ipad-and-mac-no-emulator-needed",
-          "name": "You can now play Zelda and Mario Kart on your iPhone, iPad, and Mac, no emulator needed",
-          "brand": "Digital Trends",
-          "date": "2026-10-29T00:00:00.000Z",
-          "timezone": "UTC",
-          "region": "GLOBAL",
-          "status": "UPCOMING",
-          "confidence": "REPORTED",
-          "summary": "You can now play Zelda and Mario Kart on your iPhone, iPad, and Mac, no emulator needed - Digital Trends Skip to main content Menu Digital Trends AI Computing Phones Gaming Entertainment Audio / Video Autos Smart Home Videos Search AI AI See All AI Trending Topics GPT-5 Copilot Grok DeepSeek Perplexity Google Gemini Apple Intelligence ChatGPT Trending Guides How to Use Gemini How to Use Apple Intelligence on Mac What to Know About AI agents Building an AI PC How to Use Gemini in Google Docs How to Use Copilot AI Things AI Can Do Free AI Classes AI Beginneer Guide Computing Computing See All Co",
-          "specifications": {},
-          "image": "https://i0.wp.com/cdn.dtmg.xyz/uploads/2026/03/Nintendo-Switch-2-Running-Mario-Kart.jpg?resize=1200%2C630&ssl=1",
-          "officialUrl": "https://www.digitaltrends.com/gaming/nxnative-brings-native-nintendo-switch-games-to-apple-devices/",
-          "sourceUrl": "https://www.digitaltrends.com/gaming/nxnative-brings-native-nintendo-switch-games-to-apple-devices/",
-          "collectedAt": "2026-10-28T11:21:50.826Z",
-          "requiresReview": false,
-          "productUrl": "https://www.digitaltrends.com/gaming/nxnative-brings-native-nintendo-switch-games-to-apple-devices/%3C%-%20buttonURL%20%%3E",
-          "deviceModel": "You can now play Zelda and Mario Kart on your iPhone, iPad, and Mac, no emulator needed"
-        }
-      ],
-      "announcementCount": 1
-    }
-  ]
+  "updatedAt": "2026-10-29T11:32:28.780Z",
+  "sourcesNote": "Mise à jour automatisée du 2026-10-29T11:32:28.780Z: 0 événement(s) confirmés officiellement et 0 événement(s) rapportés par des médias spécialisés fiables, avec niveau de confiance affiché. Photos, diffusion et liens commerciaux sont enrichis lorsqu'ils existent.",
+  "events": []
 }
