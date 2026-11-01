@@ -135,6 +135,9 @@ for (const item of [...collected, ...officialSeeds]) byId.set(item.id, item);
 
 const valid = [...byId.values()].filter(e => {
   if (!e || !['OFFICIAL', 'REPORTED'].includes(e.confidence)) return false;
+  // A media article's publication date is not a product launch date.
+  // Publish REPORTED events only after an explicit manual date verification.
+  if (e.confidence === 'REPORTED' && e.manualDateVerified !== true) return false;
   if (typeof e.date !== 'string' || Number.isNaN(Date.parse(e.date)) || !e.date.startsWith(currentMonth)) return false;
   // OFFICIAL requires a manufacturer page. REPORTED is allowed from a trusted
   // specialist source, but must retain the article URL as its traceable source.
@@ -200,7 +203,7 @@ function modelMatch(text) {
     [/\b(?:vivo|Vivo)\s+(?:X\s*Fold\s*\d+|[A-Z]\d+)(?:\s+(?:Pro(?:\s+Max)?|Ultra|e))?\b/i, 'vivo'],
     [/\biQOO\s+\d+(?:\s+(?:Pro|Ultra|Neo))?\b/i, 'iQOO'],
     [/\bNothing\s+Phone\s*\(\d+\)(?:\s+[A-Za-z0-9]+)?\b/i, 'Nothing'],
-    [/\bMotorola\s+(?:Razr|Edge)\s+[A-Za-z0-9]+(?:\s+[A-Za-z0-9]+)?\b/i, 'Motorola'],
+    [/\bMotorola\s+(?:Razr|Edge|Signature)\s+[A-Za-z0-9]+(?:\s+[A-Za-z0-9]+)?\b/i, 'Motorola'],
     [/\bGoogle\s+Pixel\s+\d+(?:\s+(?:Pro(?:\s+XL)?|Fold|a))?\b/i, 'Google'],
     [/\bSony\s+Xperia\s+[A-Za-z0-9]+(?:\s+[A-Za-z0-9]+)?\b/i, 'Sony'],
     [/\b(?:realme|Realme)\s+(?:GT\s+\d+(?:\s+(?:Pro|Ultra))?|\d+\s+Pro(?:\s+Plus)?)\b/i, 'realme'],

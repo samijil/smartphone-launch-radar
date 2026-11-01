@@ -132,6 +132,31 @@
       "officialUrl": "https://consumer.huawei.com/cn/press/events/2026/harmonyos-7-and-huawei-mate-xt-2-and-all-scenario-new-product-launch-event/",
       "sourceUrl": "https://sina.cn/news/detail/5339908249751165.html",
       "requiresReview": false
+    },
+    {
+      "id": "motorola-signature-27-global-launch-2026-11-05",
+      "name": "Motorola Signature 27 — présentation mondiale",
+      "brand": "Motorola",
+      "date": "2026-11-05T00:00:00.000Z",
+      "datePrecision": "DAY",
+      "timezone": "UTC",
+      "region": "GLOBAL",
+      "status": "UPCOMING",
+      "confidence": "OFFICIAL",
+      "summary": "Motorola a annoncé officiellement la présentation mondiale du Signature 27 pour le 5 novembre 2026. L'heure exacte et la date de mise en vente ne sont pas communiquées. Date vérifiée dans l'annonce du compte officiel @Moto du 29 octobre et fenêtre de novembre confirmée sur le site Motorola.",
+      "specifications": {
+        "Date de présentation": "5 novembre 2026 (heure non annoncée)",
+        "Processeur": "Snapdragon 8 Elite Extreme Gen 6 (Motorola)",
+        "Appareil photo": "Capteur principal Sony LYTIA L910 50 Mpx et téléobjectif périscopique 200 Mpx",
+        "Audio": "Bang & Olufsen",
+        "Mises à jour": "Jusqu'à 7 générations d'Android annoncées",
+        "Prix et disponibilité": "Non annoncés ; page officielle de préinscription disponible"
+      },
+      "image": "https://assets.motorola.com/global/zeus/motorola_signature_27_landing_page_video_placeholder_hero_d_.jpg",
+      "officialUrl": "https://x.com/Moto/status/2115783257912750474",
+      "sourceUrl": "https://www.motorola.com/us/en/motorola-signature-2027",
+      "eventUrl": "https://x.com/Moto/status/2115783257912750474",
+      "requiresReview": false
     }
   ]
 }
